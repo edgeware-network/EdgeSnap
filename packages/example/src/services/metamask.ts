@@ -32,7 +32,7 @@ export async function installPolkadotSnap(): Promise<boolean> {
   try {
     console.log("installing snap");
 
-    await enablePolkadotSnap({ networkName: "westend" }, snapId, { version: "latest" });
+    await enablePolkadotSnap({ networkName: "edgeware" }, snapId, { version: "latest" });
 
     console.log("Snap installed!!");
     return true;
@@ -65,7 +65,7 @@ export async function initiateFilecoinSnap(): Promise<SnapInitializationResponse
   const snapId = process.env.REACT_APP_SNAP_ID ? process.env.REACT_APP_SNAP_ID : defaultSnapId;
   try {
     console.log('Attempting to connect to snap...');
-    const metamaskFilecoinSnap = await enablePolkadotSnap({ networkName: "westend" }, snapId, { version: "latest" });
+    const metamaskFilecoinSnap = await enablePolkadotSnap({ networkName: "edgeware" }, snapId, { version: "latest" });
     console.log('Snap installed!');
     return { isSnapInstalled: true, snap: metamaskFilecoinSnap };
   } catch (e) {

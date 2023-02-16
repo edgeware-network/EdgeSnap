@@ -30,10 +30,8 @@ export async function getKeyPair(snap: SnapsGlobalObject): Promise<KeyringPair> 
 
 const getCoinTypeByNetwork = (network: SnapNetworks): number => {
   switch (network) {
-    case "kusama":
-    case "westend":
-      return 434;
-    case "polkadot":
-      return 354;
+    case "edgeware":
+    case "beresheet":
+      return 523;
   }
 };

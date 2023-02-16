@@ -2,7 +2,7 @@ import { JsonBIP44CoinTypeNode } from "@metamask/key-tree";
 import {showConfirmationDialog} from "../util/confirmation";
 import { SnapsGlobalObject } from "@metamask/snaps-types";
 
-const kusamaCoinType = 434;
+const beresheetCoinType = 523;
 
 export async function exportSeed(snap: SnapsGlobalObject): Promise<string | null> {
   // ask for confirmation
@@ -14,7 +14,7 @@ export async function exportSeed(snap: SnapsGlobalObject): Promise<string | null
   if (confirmation) {
     const bip44Node = (await snap.request({
       method: "snap_getBip44Entropy",
-      params: { coinType: kusamaCoinType },
+      params: { coinType: beresheetCoinType },
     })) as JsonBIP44CoinTypeNode;
 
     return bip44Node.privateKey.slice(0, 32);

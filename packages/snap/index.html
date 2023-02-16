@@ -173,7 +173,7 @@
             params: {
               configuration: {
                 network: {
-                  wsRpcUrl: "wss://kusama-rpc.polkadot.io/",
+                  wsRpcUrl: "wss://beresheet-rpc.polkadot.io/",
                   unit: {
                     image: "",
                     symbol: "KSM",
@@ -195,7 +195,7 @@
         await ethereum.send({
           method: snapId,
           params: [{
-            method: 'removeKusamaAsset'
+            method: 'removeberesheetAsset'
           }]
         });
       } catch (e) {
@@ -208,7 +208,7 @@
         await ethereum.send({
           method: snapId,
           params: [{
-            method: 'addKusamaAsset'
+            method: 'addberesheetAsset'
           }]
         });
       } catch (e) {

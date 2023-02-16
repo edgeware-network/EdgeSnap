@@ -1,7 +1,7 @@
 import chai, {expect} from "chai";
 import sinonChai from "sinon-chai";
 import {getConfiguration, getDefaultConfiguration} from "../../../src/configuration";
-import {defaultConfiguration, kusamaConfiguration, westendConfiguration} from "../../../src/configuration/predefined";
+import {defaultConfiguration, beresheetConfiguration, edgewareConfiguration} from "../../../src/configuration/predefined";
 import {WalletMock} from "../wallet.mock.test";
 import {EmptyMetamaskState} from "../../../src/interfaces";
 import {SnapConfig} from "@chainsafe/metamask-polkadot-types";
@@ -11,14 +11,14 @@ chai.use(sinonChai);
 describe('Test configuration functions', function() {
   describe('getDefaultConfiguration', function () {
 
-    it('should return kusama configuration on "kusama"', function () {
-      const configuration = getDefaultConfiguration("kusama");
-      expect(configuration).to.be.deep.eq(kusamaConfiguration);
+    it('should return beresheet configuration on "beresheet"', function () {
+      const configuration = getDefaultConfiguration("beresheet");
+      expect(configuration).to.be.deep.eq(beresheetConfiguration);
     });
 
-    it('should return westend configuration on "westend"', function () {
-      const configuration = getDefaultConfiguration("westend");
-      expect(configuration).to.be.deep.eq(westendConfiguration);
+    it('should return edgeware configuration on "edgeware"', function () {
+      const configuration = getDefaultConfiguration("edgeware");
+      expect(configuration).to.be.deep.eq(edgewareConfiguration);
     });
 
     it('should return default configuration on empty string', function () {
@@ -40,7 +40,7 @@ describe('Test configuration functions', function() {
     });
 
     it('should return configuration saved in state"', async function () {
-      const customConfiguration: SnapConfig = {addressPrefix: 5, networkName: "westend", wsRpcUrl: "url"};
+      const customConfiguration: SnapConfig = {addressPrefix: 5, networkName: "edgeware", wsRpcUrl: "url"};
       walletStub.request.returns({polkadot: {config: customConfiguration}});
       const configuration = await getConfiguration(walletStub);
       expect(configuration).to.be.deep.eq(customConfiguration);

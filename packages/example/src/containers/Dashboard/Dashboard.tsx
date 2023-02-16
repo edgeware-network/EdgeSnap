@@ -29,7 +29,7 @@ export const Dashboard = () => {
   const [publicKey, setPublicKey] = useState("");
   const [latestBlock, setLatestBlock] = useState<BlockInfo>({ hash: "", number: "" });
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [network, setNetwork] = useState<SnapNetworks>("westend");
+  const [network, setNetwork] = useState<SnapNetworks>("edgeware");
 
   const [api, setApi] = useState<MetamaskSnapApi | null>(null);
 
@@ -83,7 +83,7 @@ export const Dashboard = () => {
       <Grid direction="column" alignItems="center" justify="center" container spacing={3}>
         <Box m="2rem">
           <Typography variant="h2">
-            Polkadot snap demo
+            Edgeware Snap
           </Typography>
         </Box>
         {
@@ -94,12 +94,11 @@ export const Dashboard = () => {
             <Box m="1rem" alignSelf="baseline">
               <InputLabel>Network</InputLabel>
               <Select
-                defaultValue={"westend"}
+                defaultValue={"edgeware"}
                 onChange={handleNetworkChange}
               >
-                <MenuItem value={"westend"}>Westend</MenuItem>
-                <MenuItem value={"kusama"}>Kusama</MenuItem>
-                <MenuItem value={"polkadot"}>Polkadot</MenuItem>
+                <MenuItem value={"edgeware"}>edgeware</MenuItem>
+                <MenuItem value={"beresheet"}>beresheet</MenuItem>
               </Select>
             </Box>
             <Grid container spacing={3} alignItems={"stretch"}>
