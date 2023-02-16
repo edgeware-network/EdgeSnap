@@ -14,7 +14,7 @@ Adapter has only one exposed function for injecting snap as web3 provider.
 
 ```typescript
 function injectMetamaskPolkadotSnapProvider(
-  network: "westend"|"kusama",
+  network: "edgeware"|"beresheet",
   config?: SnapConfig,
   pluginOrigin?: string
 ): void

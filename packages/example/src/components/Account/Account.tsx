@@ -38,7 +38,7 @@ export const Account = (props: AccountProps) => {
             <Box m={"0.5rem"} />
             <Typography variant="h6">ACCOUNT BALANCE:</Typography>
             <Typography variant="subtitle2">
-              {formatBalance(props.balance, { decimals: 12, withSi: true, withUnit: getCurrency(props.network) })}
+              {formatBalance(props.balance, { decimals: 18, withSi: true, withUnit: getCurrency(props.network) })}
             </Typography>
           </Grid>
         </Grid>

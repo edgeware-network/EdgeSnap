@@ -83,7 +83,7 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
             <Box m="0.5rem" />
             <TextField
               // eslint-disable-next-line max-len
-              InputProps={{ startAdornment: <InputAdornment position="start">{`m${getCurrency(network)}`}</InputAdornment> }}
+              InputProps={{ startAdornment: <InputAdornment position="start">{`${getCurrency(network)}`}</InputAdornment> }}
               // eslint-disable-next-line max-len
               onChange={handleAmountChange} size="medium" fullWidth id="recipient" label="Amount" variant="outlined" value={amount}>
             </TextField>

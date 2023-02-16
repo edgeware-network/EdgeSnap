@@ -10,13 +10,13 @@ interface Web3Window extends InjectedWindow {
 }
 
 const config: SnapConfig = {
-  networkName: "westend",
+  networkName: "edgeware",
 };
 
 function transformAccounts (accounts: string[]): InjectedAccount[] {
   return accounts.map((address, i) => ({
     address,
-    name: `Polkadot Snap #${i}`,
+    name: `Edgeware Snap #${i}`,
     type: 'ethereum'
   }));
 }

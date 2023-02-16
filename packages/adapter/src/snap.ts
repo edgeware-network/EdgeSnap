@@ -25,7 +25,7 @@ export class MetamaskPolkadotSnap {
   public constructor(pluginOrigin: string, config: SnapConfig) {
     this.pluginOrigin = pluginOrigin;
     this.snapId = `wallet_snap_${this.pluginOrigin}`;
-    this.config = config || {networkName: "westend"};
+    this.config = config || {networkName: "edgeware"};
   }
   
 
