@@ -40,7 +40,7 @@ describe('Test configuration functions', function() {
     });
 
     it('should return configuration saved in state"', async function () {
-      const customConfiguration: SnapConfig = {addressPrefix: 5, networkName: "edgeware", wsRpcUrl: "url"};
+      const customConfiguration: SnapConfig = {addressPrefix: 7, networkName: "edgeware", wsRpcUrl: "url"};
       walletStub.request.returns({polkadot: {config: customConfiguration}});
       const configuration = await getConfiguration(walletStub);
       expect(configuration).to.be.deep.eq(customConfiguration);
