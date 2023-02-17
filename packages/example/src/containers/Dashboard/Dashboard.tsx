@@ -97,8 +97,8 @@ export const Dashboard = () => {
                 defaultValue={"edgeware"}
                 onChange={handleNetworkChange}
               >
-                <MenuItem value={"edgeware"}>edgeware</MenuItem>
-                <MenuItem value={"beresheet"}>beresheet</MenuItem>
+                <MenuItem value={"edgeware"}>Edgeware</MenuItem>
+                <MenuItem value={"beresheet"}>Beresheet</MenuItem>
               </Select>
             </Box>
             <Grid container spacing={3} alignItems={"stretch"}>

@@ -173,12 +173,12 @@
             params: {
               configuration: {
                 network: {
-                  wsRpcUrl: "wss://beresheet-rpc.polkadot.io/",
+                  wsRpcUrl: "wss://beresheet.jelliedowl.net/",
                   unit: {
                     image: "",
-                    symbol: "KSM",
+                    symbol: "TEDG",
                   },
-                  addressPrefix: 1
+                  addressPrefix: 7
                 }
               }
             }
@@ -195,7 +195,7 @@
         await ethereum.send({
           method: snapId,
           params: [{
-            method: 'removeberesheetAsset'
+            method: 'removeBeresheetAsset'
           }]
         });
       } catch (e) {
@@ -208,7 +208,7 @@
         await ethereum.send({
           method: snapId,
           params: [{
-            method: 'addberesheetAsset'
+            method: 'addBeresheetAsset'
           }]
         });
       } catch (e) {
