@@ -27,7 +27,7 @@ export class MetamaskPolkadotSnap {
     this.snapId = `wallet_snap_${this.pluginOrigin}`;
     this.config = config || {networkName: "edgeware"};
   }
-  
+
 
   public getMetamaskSnapApi = async (): Promise<MetamaskSnapApi> => {
     return {
