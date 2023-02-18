@@ -1,1 +1,19 @@
 @import "./variables.scss";
+
+.radial_gradient {
+  min-height: 100vh;
+  background-position: 0px -30vh;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(212,43,105,0.3) 0%, rgba(33,36,41,0) 100%);
+}
+.test_card {
+  background: #1d1d1d;
+}
+
+
+  // card_design: {
+  //   background: "#000";
+  //   border-radius: 20px;
+  //   box-shadow: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px, rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
+  // }
+

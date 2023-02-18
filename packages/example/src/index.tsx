@@ -4,10 +4,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {ThemeProvider} from "@material-ui/core/styles";
 import {theme} from "./style/theme";
+import { CssBaseline } from '@material-ui/core';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <App />
+    <CssBaseline>
+      <App />
+    </CssBaseline>
   </ThemeProvider>
   , 
   document.getElementById('root'));

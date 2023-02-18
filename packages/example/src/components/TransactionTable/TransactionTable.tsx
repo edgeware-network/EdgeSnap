@@ -6,6 +6,7 @@ import {
 import { shortAddress } from "../../services/format";
 import { formatBalance } from "@polkadot/util";
 import { Transaction } from "@chainsafe/metamask-polkadot-types";
+import { card_style } from "../../style/theme";
 
 export interface TransactionTableProps {
   txs: Transaction[];
@@ -13,7 +14,7 @@ export interface TransactionTableProps {
 
 export const TransactionTable = (props: TransactionTableProps) => {
   return (
-    <TableContainer className="transtaction-table" component={Paper}>
+    <TableContainer style={card_style.table} className="transtaction-table" component={Paper}>
       <Table
         aria-label="simple table">
         <TableHead>

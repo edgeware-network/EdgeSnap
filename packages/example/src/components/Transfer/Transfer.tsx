@@ -13,6 +13,7 @@ import {
 import { Alert } from "@material-ui/lab";
 import { getCurrency } from "../../services/format";
 import {MetaMaskContext} from "../../context/metamask";
+import { card_style } from "../../style/theme";
 
 interface ITransferProps {
   network: string;
@@ -71,7 +72,7 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
   }, [amount, recipient, setAmount, setRecipient, onNewTransferCallback]);
 
   return (
-    <Card>
+    <Card style={card_style.card}>
       <CardContent>
         <CardHeader title="Transfer" />
         <Grid container alignItems="center" justify="space-between">
@@ -91,7 +92,7 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
         </Grid>
         <Box m="0.5rem" />
         <Grid container item xs={12} justify="flex-end">
-          <Button onClick={onSubmit} color="secondary" variant="contained" size="large">SEND</Button>
+          <Button onClick={onSubmit} style={card_style.button} variant="outlined" size="large">Transfer</Button>
         </Grid>
         <Snackbar
           open={alert}
