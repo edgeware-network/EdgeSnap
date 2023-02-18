@@ -21,6 +21,8 @@ import { LatestBlock } from "../../components/LatestBlock/LatestBlock";
 import { BlockInfo, SnapNetworks, Transaction } from "@chainsafe/metamask-polkadot-types";
 import { MetamaskSnapApi } from "@chainsafe/metamask-polkadot-adapter/build/types";
 
+import { card_style } from "../../style/theme";
+
 export const Dashboard = () => {
   const [state] = useContext(MetaMaskContext);
 
@@ -94,6 +96,7 @@ export const Dashboard = () => {
             <Box m="1rem" alignSelf="baseline">
               <InputLabel>Network</InputLabel>
               <Select
+                // style={{background:"#1d1d1d"}}
                 defaultValue={"edgeware"}
                 onChange={handleNetworkChange}
               >
@@ -102,14 +105,12 @@ export const Dashboard = () => {
                 <MenuItem value={"polkadot"}>Polkadot</MenuItem>
               </Select>
             </Box>
+            <Box m="1rem" />
             <Grid container spacing={3} alignItems={"stretch"}>
-              <Grid item xs={12}>
+              <Grid item md={6} xs={12}>
                 <LatestBlock block={latestBlock} />
               </Grid>
-            </Grid>
-            <Box m="1rem" />
-            <Grid container spacing={3} alignItems="stretch">
-              <Grid item xs={12}>
+              <Grid item md={6} xs={12}>
                 <Account network={network} address={address} balance={balance} publicKey={publicKey} />
               </Grid>
             </Grid>
@@ -125,8 +126,8 @@ export const Dashboard = () => {
             <Box m="1rem" />
             <Grid container spacing={3} alignItems={"stretch"}>
               <Grid item xs={12}>
-                <Card>
-                  <CardHeader title="Account transactions" />
+                <Card style={card_style.card}>
+                  <CardHeader title="Account Transactions" />
                   <CardContent>
                     <TransactionTable txs={transactions} />
                   </CardContent>

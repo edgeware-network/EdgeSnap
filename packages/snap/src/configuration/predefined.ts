@@ -10,6 +10,18 @@ export const kusamaConfiguration: SnapConfig = {
   },
   wsRpcUrl: "wss://kusama-rpc.polkadot.io/",
 };
+
+export const beresheetConfiguration: SnapConfig = {
+  addressPrefix: 7,
+  networkName: "beresheet",
+  unit: {
+    decimals: 18,
+    image: "https://svgshare.com/i/qGu.svg",
+    symbol: "TEDG",
+  },
+  wsRpcUrl: "wss://beresheet.jelliedowl.net/",
+};
+
 export const edgewareConfiguration: SnapConfig = {
   addressPrefix: 7,
   networkName: "edgeware",

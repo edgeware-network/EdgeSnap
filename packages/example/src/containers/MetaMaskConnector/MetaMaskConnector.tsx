@@ -4,6 +4,7 @@ import React, { useCallback, useContext, useEffect, Fragment } from "react";
 import Alert from "@material-ui/lab/Alert";
 import { MetamaskActions, MetaMaskContext } from "../../context/metamask";
 import { initiateFilecoinSnap, isPolkadotSnapInstalled } from "../../services/metamask";
+import LinkIcon from '@material-ui/icons/Link';
 
 export const MetaMaskConnector = () => {
 
@@ -59,20 +60,26 @@ export const MetaMaskConnector = () => {
           </React.Fragment>
         }
       />
-      {state.hasMetaMask &&
+      {/* Fix this style */}
+
+      {!state.hasMetaMask &&
         <Fragment>
-          <Alert severity="warning">Ensure that MetaMask is installed!</Alert>
+          <Alert variant="outlined" severity="warning">Ensure that MetaMask flask is installed!</Alert>
           <Box mt={"1rem"} />
         </Fragment>
       }
       <Button
         disabled={!state.hasMetaMask}
         onClick={installSnap}
-        variant="contained"
+        variant="outlined"
         size={"large"}
-        color="primary"
+        style={{
+          borderColor:"#d42b69",
+          borderRadius:20,
+        }}
+        startIcon={<LinkIcon />}
       >
-        Connect to MetaMask
+        Connect Metamask
       </Button>
     </div>
   );

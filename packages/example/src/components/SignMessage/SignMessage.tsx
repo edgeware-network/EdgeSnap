@@ -3,6 +3,7 @@ import { Box, Button, Card, CardContent, CardHeader, Dialog, Grid, TextField } f
 import { stringToHex } from "@polkadot/util/string";
 import { DialogActions, DialogContent, DialogContentText, DialogTitle, Typography } from "@material-ui/core";
 import {MetaMaskContext} from "../../context/metamask";
+import { card_style } from "../../style/theme";
 
 interface Props {
   address: string;
@@ -39,8 +40,8 @@ export const SignMessage: React.FC<Props> = ({address}) => {
   };
 
   return (
-    <Card style={{ height: "100%" }}>
-      <CardHeader title="Sign custom message" />
+    <Card style={card_style.card}>
+      <CardHeader title="Sign Message" />
       <CardContent>
         <Grid container>
           <TextField
@@ -55,7 +56,7 @@ export const SignMessage: React.FC<Props> = ({address}) => {
         </Grid>
         <Box m="0.5rem" />
         <Grid container justify="flex-end">
-          <Button onClick={onSubmit} color="secondary" variant="contained" size="large">Sign</Button>
+          <Button onClick={onSubmit} style={card_style.button} variant="outlined" size="large">Sign</Button>
         </Grid>
       </CardContent>
       <Dialog
