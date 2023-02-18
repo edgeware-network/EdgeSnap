@@ -125,7 +125,7 @@ export interface UnitConfiguration {
   customViewUrl?: string;
 }
 
-export type SnapNetworks = "polkadot" | "kusama" | "westend";
+export type SnapNetworks = "polkadot" | "kusama" | "edgeware";
 
 export interface SnapConfig {
   networkName: SnapNetworks;

@@ -29,7 +29,7 @@ export const Dashboard = () => {
   const [publicKey, setPublicKey] = useState("");
   const [latestBlock, setLatestBlock] = useState<BlockInfo>({ hash: "", number: "" });
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [network, setNetwork] = useState<SnapNetworks>("westend");
+  const [network, setNetwork] = useState<SnapNetworks>("edgeware");
 
   const [api, setApi] = useState<MetamaskSnapApi | null>(null);
 
@@ -94,10 +94,10 @@ export const Dashboard = () => {
             <Box m="1rem" alignSelf="baseline">
               <InputLabel>Network</InputLabel>
               <Select
-                defaultValue={"westend"}
+                defaultValue={"edgeware"}
                 onChange={handleNetworkChange}
               >
-                <MenuItem value={"westend"}>Westend</MenuItem>
+                <MenuItem value={"edgeware"}>Edgeware</MenuItem>
                 <MenuItem value={"kusama"}>Kusama</MenuItem>
                 <MenuItem value={"polkadot"}>Polkadot</MenuItem>
               </Select>

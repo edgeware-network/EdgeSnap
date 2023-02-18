@@ -15,7 +15,7 @@ describe('Test asset functions ', function() {
         100,
         "test-address",
         { // configuration
-          networkName: "westend",
+          networkName: "edgeware",
           unit: {
             assetId: POLKADOT_SNAP_ASSET_IDENTIFIER,
             customViewUrl: "custom-view",

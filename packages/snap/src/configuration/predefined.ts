@@ -10,15 +10,15 @@ export const kusamaConfiguration: SnapConfig = {
   },
   wsRpcUrl: "wss://kusama-rpc.polkadot.io/",
 };
-export const westendConfiguration: SnapConfig = {
-  addressPrefix: 42,
-  networkName: "westend",
+export const edgewareConfiguration: SnapConfig = {
+  addressPrefix: 7,
+  networkName: "edgeware",
   unit: {
-    decimals: 12,
-    image: "https://svgshare.com/i/L2d.svg",
-    symbol: "WND",
+    decimals: 18,
+    image: "https://svgshare.com/i/qGu.svg",
+    symbol: "EDG",
   },
-  wsRpcUrl: "wss://westend-rpc.polkadot.io/",
+  wsRpcUrl: "wss://edgeware.jelliedowl.net/",
 };
 
 export const polkadotConfiguration: SnapConfig = {
@@ -32,4 +32,4 @@ export const polkadotConfiguration: SnapConfig = {
   wsRpcUrl: "wss://rpc.polkadot.io/",
 };
 
-export const defaultConfiguration: SnapConfig = westendConfiguration;
+export const defaultConfiguration: SnapConfig = edgewareConfiguration;
