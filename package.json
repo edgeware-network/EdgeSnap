@@ -37,6 +37,7 @@
     "@mui/styled-engine-sc": "^5.11.9",
     "@mui/styles": "^5.11.9",
     "concurrently": "^7.6.0",
+    "react-router-dom": "^6.8.1",
     "styled-components": "^5.3.6"
   }
 }

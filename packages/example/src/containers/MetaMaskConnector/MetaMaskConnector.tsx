@@ -81,6 +81,7 @@ export const MetaMaskConnector = () => {
       >
         Connect Metamask
       </Button>
+
     </div>
   );
 

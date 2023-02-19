@@ -1,25 +1,22 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import {
   Box,
-  Card,
-  CardContent,
-  CardHeader,
   Container,
   Grid,
   InputLabel,
   MenuItem,
-  Typography
+  // Typography
 } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Transfer } from "../../components/Transfer/Transfer";
 import { SignMessage } from "../../components/SignMessage/SignMessage";
 import { TransactionTable } from "../../components/TransactionTable/TransactionTable";
 import { Account } from "../../components/Account/Account";
-import { MetaMaskConnector } from "../MetaMaskConnector/MetaMaskConnector";
 import { MetaMaskContext } from "../../context/metamask";
 import { LatestBlock } from "../../components/LatestBlock/LatestBlock";
 import { BlockInfo, SnapNetworks, Transaction } from "@chainsafe/metamask-polkadot-types";
 import { MetamaskSnapApi } from "@chainsafe/metamask-polkadot-adapter/build/types";
+import { MetaMaskConnector } from "../MetaMaskConnector/MetaMaskConnector";
 
 import { card_style } from "../../style/theme";
 
@@ -83,14 +80,9 @@ export const Dashboard = () => {
   return (
     <Container maxWidth="lg">
       <Grid direction="column" alignItems="center" justifyContent="center" container spacing={3}>
-        <Box m="2rem">
-          <Typography variant="h2">
-            Edgeware Snap Portal
-          </Typography>
-        </Box>
-        {
+        {/* {
           !state.polkadotSnap.isInstalled && <MetaMaskConnector />
-        }
+        } */}
         {
           state.polkadotSnap.isInstalled && <>
             <Box m="1rem" alignSelf="baseline">
@@ -107,14 +99,18 @@ export const Dashboard = () => {
             </Box>
             <Box m="1rem" />
             <Grid container spacing={3} alignItems={"stretch"}>
-              <Grid item md={6} xs={12}>
+              <Grid item  xs={12}>
                 <LatestBlock block={latestBlock} />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <Account network={network} address={address} balance={balance} publicKey={publicKey} />
               </Grid>
             </Grid>
             <Box m="1rem" />
+            <Grid container spacing={3} alignItems={"stretch"}>
+              <Grid item  xs={12}>
+                <Account network={network} address={address} balance={balance} publicKey={publicKey} />
+              </Grid>
+            </Grid>
+            <Box m="5rem" />
+            {/* <Box m="1rem" />
             <Grid container spacing={3} alignItems="stretch">
               <Grid item md={6} xs={12}>
                 <Transfer network={network} onNewTransferCallback={handleNewTransaction} />
@@ -133,7 +129,7 @@ export const Dashboard = () => {
                   </CardContent>
                 </Card>
               </Grid>
-            </Grid>
+            </Grid> */}
           </>
         }
       </Grid>

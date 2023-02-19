@@ -95,7 +95,7 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
           </Grid>
         </Grid>
         <Box m="0.5rem" />
-        <Grid container item xs={12} justifyItems="flex-end">
+        <Grid container item xs={12} justifyContent={"right"}>
           <Button onClick={onSubmit} style={card_style.button} variant="outlined" size="large">Transfer</Button>
         </Grid>
         <Snackbar

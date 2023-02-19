@@ -55,7 +55,7 @@ export const SignMessage: React.FC<Props> = ({address}) => {
           />
         </Grid>
         <Box m="0.5rem" />
-        <Grid container justifyItems="flex-end">
+        <Grid container justifyContent={"right"}>
           <Button onClick={onSubmit} style={card_style.button} variant="outlined" size="large">Sign</Button>
         </Grid>
       </CardContent>
