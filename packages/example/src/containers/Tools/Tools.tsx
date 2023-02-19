@@ -1,8 +1,15 @@
 import React from 'react';
+import { Intro, EVMDeposit, EVMWithdrawal, ConvertAddress, ConvertPublicKey } from '../../components/Tools';
 
 const Tools = () => {
   return (
-    <div><h1>Work in Progress!!!</h1></div>
+    <>
+      <Intro />
+      <EVMDeposit />
+      <EVMWithdrawal />
+      <ConvertAddress />
+      <ConvertPublicKey />
+    </>
   );
 };
 
