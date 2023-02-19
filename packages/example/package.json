@@ -5,10 +5,6 @@
   "dependencies": {
     "@chainsafe/metamask-polkadot-adapter": "workspace:^",
     "@chainsafe/metamask-polkadot-types": "workspace:^",
-    "@material-ui/core": "^4.9.7",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "latest",
-    "@material-ui/styles": "^4.9.6",
     "@polkadot/api": "^8.7.1",
     "@polkadot/extension-dapp": "^0.43.2",
     "@polkadot/util": "^9.2.1",

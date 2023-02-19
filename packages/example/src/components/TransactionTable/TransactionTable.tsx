@@ -2,7 +2,7 @@ import React from "react";
 import {
   Paper, Table, TableContainer, TableCell,
   TableRow, TableHead, TableBody
-} from '@material-ui/core';
+} from '@mui/material';
 import { shortAddress } from "../../services/format";
 import { formatBalance } from "@polkadot/util";
 import { Transaction } from "@chainsafe/metamask-polkadot-types";

@@ -9,8 +9,8 @@ import {
   InputAdornment,
   Snackbar,
   TextField
-} from '@material-ui/core';
-import { Alert } from "@material-ui/lab";
+} from '@mui/material';
+import { Alert } from "@mui/lab";
 import { getCurrency } from "../../services/format";
 import {MetaMaskContext} from "../../context/metamask";
 import { card_style } from "../../style/theme";
@@ -75,7 +75,11 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
     <Card style={card_style.card}>
       <CardContent>
         <CardHeader title="Transfer" />
-        <Grid container alignItems="center" justify="space-between">
+        <Grid 
+          container 
+          alignItems="center" 
+          justifyContent="center"
+        >
           <Grid item xs={12}>
             <TextField
               // eslint-disable-next-line max-len
@@ -91,7 +95,7 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
           </Grid>
         </Grid>
         <Box m="0.5rem" />
-        <Grid container item xs={12} justify="flex-end">
+        <Grid container item xs={12} justifyItems="flex-end">
           <Button onClick={onSubmit} style={card_style.button} variant="outlined" size="large">Transfer</Button>
         </Grid>
         <Snackbar

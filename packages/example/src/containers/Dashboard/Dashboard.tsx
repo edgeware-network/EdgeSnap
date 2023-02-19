@@ -8,9 +8,9 @@ import {
   Grid,
   InputLabel,
   MenuItem,
-  Select,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Transfer } from "../../components/Transfer/Transfer";
 import { SignMessage } from "../../components/SignMessage/SignMessage";
 import { TransactionTable } from "../../components/TransactionTable/TransactionTable";
@@ -40,7 +40,7 @@ export const Dashboard = () => {
     setTransactions((await api.getAllTransactions()));
   }, [setTransactions]);
 
-  const handleNetworkChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleNetworkChange = async (event: SelectChangeEvent<string>) => {
     const networkName = event.target.value as SnapNetworks;
     if (networkName === network) return;
     if (!api) return;
@@ -82,7 +82,7 @@ export const Dashboard = () => {
 
   return (
     <Container maxWidth="lg">
-      <Grid direction="column" alignItems="center" justify="center" container spacing={3}>
+      <Grid direction="column" alignItems="center" justifyContent="center" container spacing={3}>
         <Box m="2rem">
           <Typography variant="h2">
             Edgeware Snap Portal

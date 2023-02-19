@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Box, Button, Card, CardContent, CardHeader, Grid, Typography } from '@material-ui/core';
+import { Box, Button, Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
 import { formatBalance } from "@polkadot/util/format/formatBalance";
 import { getCurrency } from "../../services/format";
 import { MetaMaskContext } from "../../context/metamask";
@@ -36,15 +36,14 @@ export const Account = (props: AccountProps) => {
             <Typography variant="subtitle2">{props.publicKey}</Typography>
             <Box m={"0.5rem"} />
             {/* eslint-disable-next-line max-len */}
-            <Typography variant="h6">Account Balance: {formatBalance(props.balance, { decimals: 18, withSi: true, withUnit: getCurrency(props.network) })}
-            </Typography>
+            <Typography variant="h6">Account Balance:</Typography>
             {/* eslint-disable-next-line max-len */}
             <Typography variant="subtitle2">
               {formatBalance(props.balance, { decimals: 18, withSi: true, withUnit: getCurrency(props.network) })}
             </Typography>
           </Grid>
         </Grid>
-        <Grid container item xs={12} justify="flex-end">
+        <Grid container item xs={12} justifyItems="flex-end">
           <Button style={card_style.button} variant={"outlined"} onClick={handleExport}>Export Private Key</Button>
         </Grid>
       </CardContent>

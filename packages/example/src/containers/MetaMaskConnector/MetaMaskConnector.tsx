@@ -1,10 +1,10 @@
-import { Box, Button, Snackbar, IconButton } from "@material-ui/core";
-import CloseIcon from '@material-ui/icons/Close';
+import { Box, Button, Snackbar, IconButton } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
 import React, { useCallback, useContext, useEffect, Fragment } from "react";
-import Alert from "@material-ui/lab/Alert";
+import Alert from "@mui/lab/Alert";
 import { MetamaskActions, MetaMaskContext } from "../../context/metamask";
 import { initiateFilecoinSnap, isPolkadotSnapInstalled } from "../../services/metamask";
-import LinkIcon from '@material-ui/icons/Link';
+import LinkIcon from '@mui/icons-material/Link';
 
 export const MetaMaskConnector = () => {
 
@@ -29,7 +29,7 @@ export const MetaMaskConnector = () => {
     }
   }, [dispatch]);
 
-  const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
+  const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
     }

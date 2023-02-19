@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, CardHeader, Grid, Typography } from "@material-ui/core";
+import { Box, Card, CardContent, CardHeader, Grid, Typography } from "@mui/material";
 import { BlockInfo } from "@chainsafe/metamask-polkadot-types";
 import { card_style } from "../../style/theme";
 

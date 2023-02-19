@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.36",
+    "@types/styled-components": "^5",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
     "eslint": "^8.17.0",
@@ -28,6 +29,14 @@
   },
   "packageManager": "yarn@3.2.1",
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.9",
+    "@mui/lab": "^5.0.0-alpha.120",
+    "@mui/material": "^5.11.9",
+    "@mui/styled-engine-sc": "^5.11.9",
+    "@mui/styles": "^5.11.9",
+    "concurrently": "^7.6.0",
+    "styled-components": "^5.3.6"
   }
 }
