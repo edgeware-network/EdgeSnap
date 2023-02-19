@@ -42,8 +42,8 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
     setAmount(event.target.value);
   }, [setAmount]);
 
-  const showAlert = (severity: AlertSeverity, message: string, polkasacanUrl?: string) => {
-    setPolkascanUrl(polkasacanUrl ? polkasacanUrl : "");
+  const showAlert = (severity: AlertSeverity, message: string, txHash?: string) => {
+    setPolkascanUrl(txHash ? `https://edgeware.subscan.io/extrinsic/${txHash}` : "");
     setSeverity(severity);
     setMessage(message);
     setAlert(true);
@@ -59,7 +59,7 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
         const txPayload = await api.generateTransactionPayload(convertedAmount.toString(), recipient);
         const signedTx = await api.signPayloadJSON(txPayload.payload);
         const tx = await api.send(signedTx, txPayload);
-        showAlert("info", `Transaction: ${JSON.stringify(tx, null, 2)}`);
+        showAlert("info", `Transaction: ${JSON.stringify(tx, null, 2)}`, tx.hash);
         // clear fields
         setAmount("");
         setRecipient("");
@@ -109,7 +109,7 @@ export const Transfer: React.FC<ITransferProps> = ({ network, onNewTransferCallb
           <Alert severity={severity} onClose={() => setAlert(false)}>
             {`${message} `}
             {
-              polkascanUrl === "" && <a href={polkascanUrl}>See details</a>
+              <a href={polkascanUrl} target="_blank">See details</a>
             }
           </Alert>
         </Snackbar>
