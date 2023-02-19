@@ -5,7 +5,7 @@ import Alert from "@material-ui/lab/Alert";
 import { MetamaskActions, MetaMaskContext } from "../../context/metamask";
 import { initiateFilecoinSnap, isPolkadotSnapInstalled } from "../../services/metamask";
 import LinkIcon from '@material-ui/icons/Link';
-
+import ethereumLogo from './ethereumLogo.png';
 export const MetaMaskConnector = () => {
 
   const [state, dispatch] = useContext(MetaMaskContext);
@@ -42,7 +42,7 @@ export const MetaMaskConnector = () => {
   };
 
   return (
-    <div>
+    <div style={{textAlign:"center",}}>
       <Snackbar
         anchorOrigin={{
           horizontal: 'left',
@@ -66,6 +66,16 @@ export const MetaMaskConnector = () => {
         <Fragment>
           <Alert variant="outlined" severity="warning">Ensure that MetaMask flask is installed!</Alert>
           <Box mt={"1rem"} />
+          <p>
+            <img
+              src={ethereumLogo}
+              alt="ethereum logo"
+              style={{
+                height: "20%",
+                width: "20%",
+              }}
+            />
+          </p>
         </Fragment>
       }
       <Button

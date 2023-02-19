@@ -36,8 +36,7 @@ export const Account = (props: AccountProps) => {
             <Typography variant="subtitle2">{props.publicKey}</Typography>
             <Box m={"0.5rem"} />
             {/* eslint-disable-next-line max-len */}
-            <Typography variant="h6">Account Balance: {formatBalance(props.balance, { decimals: 18, withSi: true, withUnit: getCurrency(props.network) })}
-            </Typography>
+            <Typography variant="h6">Account Balance:</Typography>
             {/* eslint-disable-next-line max-len */}
             <Typography variant="subtitle2">
               {formatBalance(props.balance, { decimals: 18, withSi: true, withUnit: getCurrency(props.network) })}
