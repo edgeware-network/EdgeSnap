@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.8.2](https://github.com/ChainSafe/metamask-snap-polkadot/compare/polkadot-snap-v0.8.1...polkadot-snap-v0.8.2) (2023-11-23)
+
+
+### Bug Fixes
+
+* cd - `actions/setup-node` ([#213](https://github.com/ChainSafe/metamask-snap-polkadot/issues/213)) ([f7944fd](https://github.com/ChainSafe/metamask-snap-polkadot/commit/f7944fdd2d0af4bc6c68dc61ed3018a71c1b4d87))
+
+## [0.8.1](https://github.com/ChainSafe/metamask-snap-polkadot/compare/polkadot-snap-v0.8.0...polkadot-snap-v0.8.1) (2023-11-21)
+
+
+### Bug Fixes
+
+* transfer method polkadot js update ([#211](https://github.com/ChainSafe/metamask-snap-polkadot/issues/211)) ([20cb7bf](https://github.com/ChainSafe/metamask-snap-polkadot/commit/20cb7bf5e7bc41af0353c73b94e6c70269a9cc28)), closes [#206](https://github.com/ChainSafe/metamask-snap-polkadot/issues/206)
+
+## [0.8.0](https://github.com/ChainSafe/metamask-snap-polkadot/compare/polkadot-snap-v0.7.7...polkadot-snap-v0.8.0) (2023-11-14)
+
+
+### Features
+
+* more small text changes ([#199](https://github.com/ChainSafe/metamask-snap-polkadot/issues/199)) ([e0f3d4f](https://github.com/ChainSafe/metamask-snap-polkadot/commit/e0f3d4fc0be7366c62211e29d3a276e4fab5669e))
+
 ## [0.7.7](https://github.com/ChainSafe/metamask-snap-polkadot/compare/polkadot-snap-v0.7.6...polkadot-snap-v0.7.7) (2023-10-10)
 
 
