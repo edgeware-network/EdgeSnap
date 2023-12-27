@@ -8,6 +8,10 @@ export function getCurrency(network: string): string {
       return 'KSM';
     case 'westend':
       return 'WND';
+    case 'edgeware':
+      return 'EDG';
+    case 'acala':
+      return 'ACA';
   }
   return '';
 }

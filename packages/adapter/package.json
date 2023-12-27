@@ -1,12 +1,12 @@
 {
-  "name": "@chainsafe/metamask-polkadot-adapter",
+  "name": "@edgesnap/metamask-substrate-adapter",
   "version": "0.6.0",
   "main": "./build/index.js",
   "module": "./build/index.js",
   "types": "./build/index.d.ts",
   "author": "ChainSafe <info@chainsafe.io>",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/chainsafe/metamask-snap-polkadot/tree/master/packages/adapter",
+  "homepage": "https://github.com/edgeware-network/EdgeSnap/tree/substrate/packages/adapter",
   "keywords": [
     "polkadot",
     "metamask",

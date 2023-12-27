@@ -1,4 +1,4 @@
-import type { SnapConfig } from '@chainsafe/metamask-polkadot-types';
+import type { SnapConfig } from '@edgesnap/metamask-substrate-types';
 
 export const kusamaConfiguration: SnapConfig = {
   addressPrefix: 2,
@@ -31,6 +31,28 @@ export const polkadotConfiguration: SnapConfig = {
     symbol: 'DOT'
   },
   wsRpcUrl: 'https://rpc.polkadot.io/'
+};
+
+export const edgewareConfiguration: SnapConfig = {
+  addressPrefix: 7,
+  networkName: 'edgeware',
+  unit: {
+    decimals: 18,
+    image: 'https://svgshare.com/i/qGu.svg',
+    symbol: 'EDG'
+  },
+  wsRpcUrl: 'https://edgeware.jelliedowl.net/'
+};
+
+export const acalaConfiguration: SnapConfig = {
+  addressPrefix: 10,
+  networkName: 'acala',
+  unit: {
+    decimals: 12,
+    image: 'https://svgshare.com/i/11Jz.svg',
+    symbol: 'ACA'
+  },
+  wsRpcUrl: 'https://acala-rpc-1.aca-api.network/'
 };
 
 export const defaultConfiguration: SnapConfig = westendConfiguration;

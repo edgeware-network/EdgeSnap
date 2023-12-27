@@ -1,10 +1,12 @@
-import type { SnapConfig } from '@chainsafe/metamask-polkadot-types';
+import type { SnapConfig } from '@edgesnap/metamask-substrate-types';
 import { getMetamaskState } from '../rpc/getMetamaskState';
 import {
   defaultConfiguration,
   kusamaConfiguration,
   polkadotConfiguration,
-  westendConfiguration
+  westendConfiguration,
+  edgewareConfiguration,
+  acalaConfiguration
 } from './predefined';
 
 export function getDefaultConfiguration(networkName: string): SnapConfig {
@@ -18,6 +20,12 @@ export function getDefaultConfiguration(networkName: string): SnapConfig {
     case 'westend':
       console.log('Westend configuration selected');
       return westendConfiguration;
+    case 'edgeware':
+      console.log('Edgeware configuration selected');
+      return edgewareConfiguration;
+    case 'acala':
+      console.log('Acala configuration selected');
+      return acalaConfiguration;
     default:
       return defaultConfiguration;
   }

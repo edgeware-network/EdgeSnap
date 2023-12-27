@@ -1,10 +1,10 @@
 {
-  "name": "example",
+  "name": "edgesnap",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chainsafe/metamask-polkadot-adapter": "latest",
-    "@chainsafe/metamask-polkadot-types": "latest",
+    "@edgesnap/metamask-substrate-adapter": "file:../adapter",
+    "@edgesnap/metamask-substrate-types": "file:../types",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/lab": "latest",

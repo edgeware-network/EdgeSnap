@@ -1,7 +1,7 @@
 {
-  "name": "@chainsafe/polkadot-snap",
+  "name": "@edgesnap/substrate-snap",
   "version": "0.8.2",
-  "description": "MetaMask snap for interacting with Polkadot dApps",
+  "description": "MetaMask snap for interacting with dApps on Substrate chains",
   "main": "build/index.js",
   "scripts": {
     "lint": "yarn run lint:types && yarn run lint:style",
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chainsafe/metamask-snap-polkadot.git"
+    "url": "git+https://github.com/edgeware-network/EdgeSnap.git"
   },
   "keywords": [
     "polkadot",
@@ -44,9 +44,9 @@
   "author": "ChainSafe <info@chainsafe.io>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/chainsafe/metamask-snap-polkadot/issues"
+    "url": "https://github.com/edgeware-network/EdgeSnap/issues"
   },
-  "homepage": "https://github.com/chainsafe/metamask-snap-polkadot#readme",
+  "homepage": "https://github.com/edgeware-network/EdgeSnap#readme",
   "web3Wallet": {
     "bundle": {
       "local": "dist/bundle.js",
@@ -61,7 +61,7 @@
     }
   },
   "devDependencies": {
-    "@chainsafe/metamask-polkadot-types": "latest",
+    "@edgesnap/metamask-substrate-types": "file:../types",
     "@metamask/snaps-cli": "^1.0.2",
     "@types/chai": "^4.2.10",
     "@types/mocha": "^10.0.1",
@@ -88,6 +88,7 @@
     "@polkadot/types": "^10.9.1",
     "@polkadot/util": "^12.3.2",
     "deepmerge": "^4.3.1",
-    "superstruct": "^1.0.3"
+    "superstruct": "^1.0.3",
+    "@edgesnap/metamask-substrate-types": "file:../types"
   }
 }

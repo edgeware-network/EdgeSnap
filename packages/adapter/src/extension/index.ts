@@ -1,7 +1,7 @@
 import type { Injected, InjectedAccount, InjectedWindow } from '@polkadot/extension-inject/types';
 import type { SignerPayloadJSON, SignerPayloadRaw, SignerResult } from '@polkadot/types/types';
 import type { HexString } from '@polkadot/util/types';
-import type { SnapConfig } from '@chainsafe/metamask-polkadot-types';
+import type { SnapConfig } from '@edgesnap/metamask-substrate-types';
 import type { SnapInstallationParamNames } from '../index';
 import { enablePolkadotSnap } from '../index';
 import { hasMetaMask, isMetamaskSnapsSupported } from '../utils';
