@@ -31,7 +31,7 @@ function transformAccounts(accounts: string[]): InjectedAccount[] {
 
 function injectPolkadotSnap({
   win,
-  injectedSnapId = 'metamask-polkadot-snap',
+  injectedSnapId = 'metamask-substrate-snap',
   config,
   snapOrigin,
   snapInstallationParams
@@ -70,7 +70,7 @@ function injectPolkadotSnap({
   };
 }
 /**
- * @param injectedSnapId - Optional ID of injected snap, default: "metamask-polkadot-snap"
+ * @param injectedSnapId - Optional ID of injected snap, default: "metamask-substrate-snap"
  */
 export function initPolkadotSnap(
   { config, snapOrigin, snapInstallationParams }: IEnablePolkadotSnapParams,
