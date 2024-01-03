@@ -3,7 +3,7 @@ import type { SnapConfig } from '@edgesnap/metamask-substrate-types';
 import { MetamaskPolkadotSnap } from './snap';
 import { hasMetaMask, isMetamaskSnapsSupported, isPolkadotSnapInstalled } from './utils';
 
-const defaultSnapOrigin = 'npm:@edgesnap/substrate-snap';
+const defaultSnapOrigin = '@edgesnap/substrate-snap';
 
 export type SnapInstallationParamNames = string;
 
