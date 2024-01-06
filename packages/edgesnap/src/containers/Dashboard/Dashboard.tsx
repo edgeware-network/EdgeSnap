@@ -11,8 +11,8 @@ import {
   Select,
   Typography
 } from '@material-ui/core';
-import type { BlockInfo, SnapNetworks, Transaction } from '@chainsafe/metamask-polkadot-types';
-import type { MetamaskSnapApi } from '@chainsafe/metamask-polkadot-adapter/src/types';
+import type { BlockInfo, SnapNetworks, Transaction } from '@edgesnap/metamask-substrate-types';
+import type { MetamaskSnapApi } from '@edgesnap/metamask-substrate-adapter/src/types';
 import { Transfer } from '../../components/Transfer/Transfer';
 import { SignMessage } from '../../components/SignMessage/SignMessage';
 import { TransactionTable } from '../../components/TransactionTable/TransactionTable';
@@ -85,7 +85,7 @@ export const Dashboard = (): React.JSX.Element => {
     <Container maxWidth="lg">
       <Grid direction="column" alignItems="center" justifyContent="center" container spacing={3}>
         <Box style={{ margin: '2rem' }}>
-          <Typography variant="h2">Polkadot Wallet Snap Example dApp</Typography>
+          <Typography variant="h2">EdgeSnap</Typography>
         </Box>
         {!state.polkadotSnap.isInstalled ? (
           <MetaMaskConnector />
@@ -102,6 +102,8 @@ export const Dashboard = (): React.JSX.Element => {
                 <MenuItem value={'westend'}>Westend</MenuItem>
                 <MenuItem value={'kusama'}>Kusama</MenuItem>
                 <MenuItem value={'polkadot'}>Polkadot</MenuItem>
+                <MenuItem value={'edgeware'}>Edgeware</MenuItem>
+                <MenuItem value={'acala'}>Acala</MenuItem>
               </Select>
             </Box>
             <Grid container spacing={3} alignItems={'stretch'}>

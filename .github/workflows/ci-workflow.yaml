@@ -34,7 +34,7 @@ jobs:
       - name: Check if snap manifest updated
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
-          echo "Snap manifest not updated: ${{ steps.verify-changed-files.outputs.changed_files }} 
+          echo "Snap manifest not updated: ${{ steps.verify-changed-files.outputs.changed_files }}
           or @metamask/snaps-cli version is different from local version"
           exit 1
       - name: Run tests
@@ -55,13 +55,13 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          REACT_APP_SNAP_ID: 'npm:@chainsafe/polkadot-snap'
+          REACT_APP_SNAP_ID: '@chainsafe/substrate-snap'
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 2238a825c5aca59233eab1f221f7aefb
-          projectName: metamask-snap-polkadot
-          directory: ./packages/example/build
+          projectName: edgesnap
+          directory: ./packages/edgesnap/build
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.head_ref || github.ref_name }}

@@ -1,9 +1,9 @@
 import '@polkadot/types-augment';
-import type { SnapConfig } from '@chainsafe/metamask-polkadot-types';
+import type { SnapConfig } from '@edgesnap/metamask-substrate-types';
 import { MetamaskPolkadotSnap } from './snap';
 import { hasMetaMask, isMetamaskSnapsSupported, isPolkadotSnapInstalled } from './utils';
 
-const defaultSnapOrigin = 'npm:@chainsafe/polkadot-snap';
+const defaultSnapOrigin = '@edgesnap/substrate-snap';
 
 export type SnapInstallationParamNames = string;
 

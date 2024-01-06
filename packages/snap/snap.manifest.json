@@ -1,10 +1,10 @@
 {
   "version": "0.8.2",
-  "description": "The Polkadot snap.",
-  "proposedName": "Polkadot Wallet",
+  "description": "Metamask snaps for Substrate chains.",
+  "proposedName": "EdgeSnap",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chainsafe/metamask-snap-polkadot.git"
+    "url": "git+https://github.com/edgeware-network/EdgeSnap.git"
   },
   "source": {
     "shasum": "13xBr1T1+K2zd0lonNjjaMlnvNk9HgI15XHF+5UtORE=",
@@ -12,7 +12,7 @@
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/logo.svg",
-        "packageName": "@chainsafe/polkadot-snap",
+        "packageName": "@edgesnap/substrate-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
@@ -31,6 +31,12 @@
       },
       {
         "coinType": 434
+      },
+      {
+        "coinType": 523
+      },
+      {
+        "coinType": 787
       }
     ],
     "snap_manageState": {}

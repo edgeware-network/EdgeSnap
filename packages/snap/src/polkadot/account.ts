@@ -2,7 +2,7 @@ import type { KeyringPair } from '@polkadot/keyring/types';
 import { Keyring } from '@polkadot/keyring';
 import { stringToU8a } from '@polkadot/util';
 import type { JsonBIP44CoinTypeNode } from '@metamask/key-tree';
-import type { SnapNetworks } from '@chainsafe/metamask-polkadot-types';
+import type { SnapNetworks } from '@edgesnap/metamask-substrate-types';
 import { getConfiguration } from '../configuration';
 
 /**
@@ -33,5 +33,9 @@ const getCoinTypeByNetwork = (network: SnapNetworks): number => {
       return 434;
     case 'polkadot':
       return 354;
+    case 'edgeware':
+      return 523;
+    case 'acala':
+      return 787;
   }
 };

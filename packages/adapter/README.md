@@ -52,7 +52,7 @@ SnapConfig {
   unit?: UnitConfiguration;
 }
 
-SnapNetworks = "polkadot" | "kusama" | "westend";
+SnapNetworks = "polkadot" | "kusama" | "westend" | "edgeware" | "acala";
 
 UnitConfiguration {
   symbol: string;
@@ -61,4 +61,3 @@ UnitConfiguration {
   customViewUrl?: string;
 }
 ```
-
