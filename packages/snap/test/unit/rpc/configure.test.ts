@@ -1,6 +1,6 @@
 import chai, { expect } from 'chai';
 import sinonChai from 'sinon-chai';
-import { kusamaConfiguration, westendConfiguration } from '../../../src/configuration/predefined';
+import { kusamaConfiguration, westendConfiguration, edgewareConfiguration, acalaConfiguration } from '../../../src/configuration/predefined';
 import { configure } from '../../../src/rpc/configure';
 import { EmptyMetamaskState } from '../../../src/interfaces';
 import { SnapConfig } from '@edgesnap/metamask-substrate-types';
@@ -30,6 +30,24 @@ describe('Test rpc handler function: configure', function () {
     const result = await configure('westend', {});
     // assertions
     expect(result).to.be.deep.eq(westendConfiguration);
+  });
+
+  it('should set predefined edgeware configuration', async function () {
+    walletStub.request.returns(EmptyMetamaskState());
+    // tested method
+    const result = await configure('edgeware', {});
+
+    // assertions
+    expect(result).to.be.deep.eq(edgewareConfiguration);
+  });
+
+  it('should set predefined acala configuration', async function () {
+    walletStub.request.returns(EmptyMetamaskState());
+    // tested method
+    const result = await configure('acala', {});
+
+    // assertions
+    expect(result).to.be.deep.eq(acalaConfiguration);
   });
 
   it('should set custom configuration', async function () {

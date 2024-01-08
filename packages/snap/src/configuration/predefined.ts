@@ -41,7 +41,7 @@ export const edgewareConfiguration: SnapConfig = {
     image: 'https://svgshare.com/i/qGu.svg',
     symbol: 'EDG'
   },
-  wsRpcUrl: 'https://edgeware.jelliedowl.net/'
+  wsRpcUrl: 'wss://edgeware.jelliedowl.net/'
 };
 
 export const acalaConfiguration: SnapConfig = {
@@ -52,7 +52,7 @@ export const acalaConfiguration: SnapConfig = {
     image: 'https://svgshare.com/i/11Jz.svg',
     symbol: 'ACA'
   },
-  wsRpcUrl: 'https://acala-rpc-1.aca-api.network/'
+  wsRpcUrl: 'wss://acala-rpc-3.aca-api.network/ws'
 };
 
 export const defaultConfiguration: SnapConfig = westendConfiguration;

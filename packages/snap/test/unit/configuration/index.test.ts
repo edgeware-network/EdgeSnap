@@ -5,7 +5,9 @@ import { getConfiguration, getDefaultConfiguration } from '../../../src/configur
 import {
   defaultConfiguration,
   kusamaConfiguration,
-  westendConfiguration
+  westendConfiguration,
+  edgewareConfiguration,
+  acalaConfiguration
 } from '../../../src/configuration/predefined';
 import { EmptyMetamaskState } from '../../../src/interfaces';
 import type { WalletMock } from '../wallet.mock';
@@ -23,6 +25,16 @@ describe('Test configuration functions', function () {
     it('should return westend configuration on "westend"', function () {
       const configuration = getDefaultConfiguration('westend');
       expect(configuration).to.be.deep.eq(westendConfiguration);
+    });
+
+    it('should return edgeware configuration on "edgeware"', function () {
+      const configuration = getDefaultConfiguration('edgeware');
+      expect(configuration).to.be.deep.eq(edgewareConfiguration);
+    });
+
+    it('should return acala configuration on "acala"', function () {
+      const configuration = getDefaultConfiguration('acala');
+      expect(configuration).to.be.deep.eq(acalaConfiguration);
     });
 
     it('should return default configuration on empty string', function () {

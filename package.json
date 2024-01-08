@@ -16,7 +16,8 @@
     "test": "yarn workspaces foreach -vpt run test",
     "lint": "yarn workspaces foreach -vpt run lint",
     "lint:style:fix": "yarn workspaces foreach -vp run lint:style:fix",
-    "demo": "concurrently  --raw --kill-others \"yarn run start:snap\" \"yarn run start:edgesnap\""
+    "demo": "concurrently  --raw --kill-others \"yarn run start:snap\" \"yarn run start:edgesnap\"",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "@chainsafe/eslint-config": "^2.1.1",
@@ -30,9 +31,11 @@
   },
   "packageManager": "yarn@3.6.1",
   "dependencies": {
-    "@rushstack/eslint-patch": "^1.3.3",
-    "@edgesnap/metamask-substrate-types": "file:./packages/types",
     "@edgesnap/metamask-substrate-adapter": "file:./packages/adapter",
-    "@edgesnap/substrate-snap": "file:./packages/snap"
+    "@edgesnap/metamask-substrate-types": "file:./packages/types",
+    "@edgesnap/substrate-snap": "file:./packages/snap",
+    "@rushstack/eslint-patch": "^1.3.3",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0"
   }
 }
