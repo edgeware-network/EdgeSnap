@@ -1,5 +1,5 @@
 import type { ApiPromise } from '@polkadot/api';
-import type { BlockId, BlockInfo } from '@edgesnap/metamask-substrate-types';
+import type { BlockId, BlockInfo } from '../../../../types';
 import type { BlockHash } from '@polkadot/types/interfaces';
 
 async function _getBlock(blockHash: BlockHash | string, api: ApiPromise): Promise<BlockInfo> {

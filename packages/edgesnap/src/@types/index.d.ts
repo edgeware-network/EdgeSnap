@@ -1,4 +1,4 @@
-import type { SnapConfig } from '@edgesnap/metamask-substrate-types';
+import type { SnapConfig } from '../../../types';
 
 declare module '@edgesnap/metamask-substrate-adapter' {
   export function injectMetamaskPolkadotSnapProvider(

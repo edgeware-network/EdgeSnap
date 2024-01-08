@@ -2,7 +2,7 @@ import type { KeyringPair } from '@polkadot/keyring/types';
 import { Keyring } from '@polkadot/keyring';
 import { stringToU8a } from '@polkadot/util';
 import type { JsonBIP44CoinTypeNode } from '@metamask/key-tree';
-import type { SnapNetworks } from '@edgesnap/metamask-substrate-types';
+import type { SnapNetworks } from '../../../types';
 import { getConfiguration } from '../configuration';
 
 /**

@@ -3,7 +3,7 @@ import sinonChai from 'sinon-chai';
 import { kusamaConfiguration, westendConfiguration, edgewareConfiguration, acalaConfiguration } from '../../../src/configuration/predefined';
 import { configure } from '../../../src/rpc/configure';
 import { EmptyMetamaskState } from '../../../src/interfaces';
-import { SnapConfig } from '@edgesnap/metamask-substrate-types';
+import { SnapConfig } from '../../../../types';
 import { getWalletMock } from '../wallet.mock';
 
 chai.use(sinonChai);

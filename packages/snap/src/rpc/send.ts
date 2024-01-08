@@ -1,5 +1,5 @@
 import type { ApiPromise } from '@polkadot/api';
-import type { Transaction, TxPayload } from '@edgesnap/metamask-substrate-types';
+import type { Transaction, TxPayload } from '../../../types';
 import { saveTxToState } from '../polkadot/tx';
 import { getAddress } from './getAddress';
 

@@ -6,7 +6,7 @@ import type {
   SnapConfig,
   Transaction,
   TxPayload
-} from '@edgesnap/metamask-substrate-types';
+} from '../../types';
 import type { SignerPayloadJSON, SignerPayloadRaw } from '@polkadot/types/types';
 import type { MetamaskPolkadotSnap } from './snap';
 
