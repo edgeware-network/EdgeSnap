@@ -1,0 +1,8 @@
+
+const TxTable = () => {
+  return (
+    <div>TxTable</div>
+  )
+}
+
+export default TxTable

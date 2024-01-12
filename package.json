@@ -10,13 +10,13 @@
     "build:snap": "yarn workspace @chainsafe/polkadot-snap build",
     "build:adapter": "yarn workspace @chainsafe/metamask-polkadot-adapter build",
     "start:snap": "yarn workspace @chainsafe/polkadot-snap serve",
-    "start:example": "yarn workspace example start",
+    "start:client": "yarn workspace client vite",
     "predemo": "yarn run build:snap && yarn run build:adapter",
     "build": "yarn workspaces foreach -vpt run build",
     "test": "yarn workspaces foreach -vpt run test",
     "lint": "yarn workspaces foreach -vpt run lint",
     "lint:style:fix": "yarn workspaces foreach -vp run lint:style:fix",
-    "demo": "concurrently  --raw --kill-others \"yarn run start:snap\" \"yarn run start:example\""
+    "demo": "concurrently  --raw --kill-others \"yarn run start:snap\" \"yarn run start:client\""
   },
   "devDependencies": {
     "@chainsafe/eslint-config": "^2.1.1",
