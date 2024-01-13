@@ -1,4 +1,4 @@
-import { panel, text } from '@metamask/snaps-ui';
+import { panel, text } from '@metamask/snaps-sdk';
 
 type ConfirmationDialogContent = {
   prompt: string;

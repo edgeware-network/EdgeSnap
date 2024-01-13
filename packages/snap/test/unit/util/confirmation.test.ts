@@ -1,7 +1,7 @@
 import chai, { expect } from 'chai';
 import sinonChai from 'sinon-chai';
 import { showConfirmationDialog } from '../../../src/util/confirmation';
-import { panel, text } from '@metamask/snaps-ui';
+import { panel, text } from '@metamask/snaps-sdk';
 import { getWalletMock } from '../wallet.mock';
 
 chai.use(sinonChai);

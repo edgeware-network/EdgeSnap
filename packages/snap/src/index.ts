@@ -1,5 +1,5 @@
 import type { ApiPromise } from '@polkadot/api/promise';
-import type { OnRpcRequestHandler } from '@metamask/snaps-types';
+import type { OnRpcRequestHandler } from '@metamask/snaps-sdk';
 import { assert } from 'superstruct';
 import type { MetamaskState } from './interfaces';
 import { EmptyMetamaskState } from './interfaces';
@@ -33,7 +33,10 @@ const apiDependentMethods = [
   'send'
 ];
 
-export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({
+  origin,
+  request,
+}) => {
   const state = await snap.request({
     method: 'snap_manageState',
     params: { operation: 'get' }
