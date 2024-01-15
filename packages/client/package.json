@@ -18,7 +18,8 @@
     "@polkadot/util": "^12.3.2",
     "@types/node": "^20.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
