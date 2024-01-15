@@ -23,7 +23,7 @@ const SnapCard = (props: SnapProps): React.JSX.Element => {
         <button className='py-1 px-2 bg-primary-650 font-poppins font-light text-sm hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-[8px]'>Install</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SnapCard
+export default SnapCard;
