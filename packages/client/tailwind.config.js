@@ -27,7 +27,9 @@ export default {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-        epilogue: ['Epilogue', 'sans-serif'],      }
+        epilogue: ['Epilogue', 'sans-serif'],  
+        unbounded: ['Unbounded', 'sans-serif'],    
+      }
     },
   },
   plugins: [],
