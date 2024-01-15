@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { Home, InteractiveUI, SnapStore } from './pages';
 import { navLinks } from './constants';
@@ -15,12 +15,13 @@ const App = () => {
       {/* bottom nav for mobile */}
       <div className='flex z-10 sm:hidden w-[80vw] h-[48px] sticky text-white bottom-4 gap-1 items-center bg-inherit justify-center rounded-[8px] shadow-[1px_2px_20px_black] p-1'>
         {navLinks.map((item) => ((item.name !== "EdgeSnap") && 
-          <h3 
+          <Link 
+            to={item.link}
             key={item.name}
             className={`px-4 py-2 w-full ${item.name === "snap-store" ? "bg-primary-800 hover:bg-primary-900" : "bg-[#404040] hover:bg-[#282828] text-black"} flex items-center justify-center font-unbounded cursor-pointer font-normal rounded-[8px]`}
-            onClick={() => window.location.href = item.link}>
+            >
             {item.name}
-          </h3>
+          </Link>
         ))}
       </div>
     </div>
