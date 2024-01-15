@@ -1,19 +1,27 @@
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { Home, InteractiveUI, SnapStore } from './pages';
+import { navLinks } from './constants';
 
 const App = () => {
   return (
-    <div className='bg-[#0d0d0d] min-h-screen flex flex-col items-center fixed w-[100vw] justify-between'>
+    <div className='bg-[#000] z-0 sm:w-[100vw] w-full min-h-screen flex flex-col relative items-center justify-between gap-10'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/snap-store' element={<SnapStore />} />
         <Route path='interactive-ui' element={<InteractiveUI />} />
       </Routes>
-      <div className='flex sm:hidden w-[60vw] h-[40px] rounded-[8px] sticky bottom-5 outline-2'>
-        <button className='px-4 w-[30vw] py-1 bg-primary-800 font-poppins font-medium hover:bg-primary-900 border-l border-[#010101] rounded-l-[8px]'>SnapStore</button>
-        <button className='px-4 w-[30vw] py-1 bg-[#404040] text-black font-poppins font-medium border-r border-[#010101] rounded-r-[8px]'>InteractiveUI</button>
+      {/* bottom nav for mobile */}
+      <div className='flex z-10 sm:hidden w-[80vw] h-[48px] sticky text-white bottom-4 gap-1 items-center bg-inherit justify-center rounded-[8px] shadow-[1px_2px_20px_black] p-1'>
+        {navLinks.map((item) => ((item.name !== "EdgeSnap") && 
+          <h3 
+            key={item.name}
+            className={`px-4 py-2 w-full ${item.name === "snap-store" ? "bg-primary-800 hover:bg-primary-900" : "bg-[#404040] hover:bg-[#282828] text-black"} flex items-center justify-center font-unbounded cursor-pointer font-normal rounded-[8px]`}
+            onClick={() => window.location.href = item.link}>
+            {item.name}
+          </h3>
+        ))}
       </div>
     </div>
   );

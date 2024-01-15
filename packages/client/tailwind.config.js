@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: "768px"
+    },
     extend: {
       colors: {
         "primary-100": "#fbeaf0",
@@ -29,6 +32,12 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         epilogue: ['Epilogue', 'sans-serif'],  
         unbounded: ['Unbounded', 'sans-serif'],    
+      },
+      backgroundImage: {
+        "Polkadot": "url('assets/polkadot.svg')",
+        "Edgeware": "url('assets/edgeware.svg')",
+        "Astar": "url('assets/astar.svg')",
+        "Kusama": "url('assets/kusama.svg')",
       }
     },
   },

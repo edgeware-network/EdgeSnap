@@ -1,20 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
-const navLinks = [
-  {
-    name: "EdgeSnap",
-    link: "/"
-  },
-  {
-    name: "snap-store",
-    link: "/snap-store"
-  },
-  {
-    name: "interactive-ui",
-    link: "/interactive-ui"
-  }
-];
+import { navLinks } from '../constants';
 
 const Navbar = (): React.JSX.Element => {
   const pathname = window.location.pathname;
@@ -39,7 +25,7 @@ const Navbar = (): React.JSX.Element => {
               </h1>
             </Link> : 
             <div className='flex items-center justify-center gap-4'>
-              <h3 className={`hover:text-primary-650 text-md p-1.5 font-regular font-unbounded cursor-pointer ${isActive === item.name ? "text-primary-650" : ""}`}
+              <h3 className={`hover:text-primary-650 text-md font-normal font-unbounded cursor-pointer ${isActive === item.name ? "text-primary-650" : ""}`}
                 onClick={() => {
                 setIsActive(item.name)
                 navigate(item.link)
@@ -49,13 +35,15 @@ const Navbar = (): React.JSX.Element => {
             </div>}
           </Fragment>
         ))}
-        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#0d0d0d] rounded-[8px]'>Connect</button>
+        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#121212] rounded-[8px]'>Connect</button>
       </div>
 
       {/* navbar for mobile */}
-      <div className='flex w-[90vw] sm:hidden h-[56px] relative bg-transparent text-[#c9c9c9] p-2.5 mx-2 top-4 outline outline-2 outline-primary-800 rounded-[8px] gap-4 items-center justify-between'>
-        <h1 className='text-2xl p-2 font-medium font-poppins cursor-pointer'>EdgeSnap</h1>
-        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-[12px]'>Connect</button>
+      <div className='flex w-[80vw] sm:hidden h-[56px] relative bg-transparent text-[#c9c9c9] p-2.5 mx-2 top-4 outline outline-2 outline-primary-800 rounded-[8px] gap-4 items-center justify-between'>
+        <Link to="/">
+          <h1 className='text-2xl p-2 font-medium font-unbounded cursor-pointer'>EdgeSnap</h1>
+        </Link>
+        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#121212] rounded-[8px]'>Connect</button>
       </div>
     </>
   );
