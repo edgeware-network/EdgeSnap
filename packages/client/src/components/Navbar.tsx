@@ -1,22 +1,61 @@
-import React from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+const navLinks = [
+  {
+    name: "EdgeSnap",
+    link: "/"
+  },
+  {
+    name: "snap-store",
+    link: "/snap-store"
+  },
+  {
+    name: "interactive-ui",
+    link: "/interactive-ui"
+  }
+];
 
 const Navbar = (): React.JSX.Element => {
+  const pathname = window.location.pathname;
+  const activeNavLink: string = pathname.split("/")[1] === "" ? "EdgeSnap" : pathname.split("/")[1];
+  const [isActive, setIsActive] = useState<string>(activeNavLink);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const activeNavLink: string = pathname.split("/")[1] === "" ? "EdgeSnap" : pathname.split("/")[1];    
+    setIsActive(activeNavLink);
+  },[pathname]);
+
   return (
     <>
       {/* navbar for laptop */}
-      <div className='sm:flex w-[90vw] h-[64px] hidden relative bg-transparent text-[#c9c9c9] p-2.5 mx-2 top-4 outline outline-2 outline-primary-800 rounded-[8px] gap-4 items-center justify-between'>
-        <h1 className='text-2xl p-2 font-medium font-poppins cursor-pointer'>EdgeSnap</h1>
-        <div className='rounded-[8px]'>
-          <button className='px-4 py-1 bg-primary-800 font-poppins font-medium hover:bg-primary-900 border-l border-[#010101] rounded-l-[8px]'>SnapStore</button>
-          <button className='px-4 py-1 bg-[#404040] text-black font-poppins font-medium border-r border-[#010101] rounded-r-[8px]'>InteractiveUI</button>
-        </div>
-        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-[8px]'>Connect</button>
+      <div className='sm:flex w-[80vw] h-[56px] hidden relative bg-transparent text-[#c9c9c9] p-2.5 mx-2 top-4 outline outline-2 outline-primary-800 rounded-[12px] items-center justify-between'>
+        {navLinks.map((item) => (
+          <Fragment key={item.name}>{item.name === "EdgeSnap" ? 
+            <Link to="/">
+              <h1 className='text-3xl p-1.5 font-medium font-unbounded cursor-pointer'>
+                {item.name}
+              </h1>
+            </Link> : 
+            <div className='flex items-center justify-center gap-4'>
+              <h3 className={`hover:text-primary-650 text-md p-1.5 font-regular font-unbounded cursor-pointer ${isActive === item.name ? "text-primary-650" : ""}`}
+                onClick={() => {
+                setIsActive(item.name)
+                navigate(item.link)
+              }}>
+                {item.name}
+              </h3>
+            </div>}
+          </Fragment>
+        ))}
+        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#0d0d0d] rounded-[8px]'>Connect</button>
       </div>
 
       {/* navbar for mobile */}
       <div className='flex w-[90vw] sm:hidden h-[56px] relative bg-transparent text-[#c9c9c9] p-2.5 mx-2 top-4 outline outline-2 outline-primary-800 rounded-[8px] gap-4 items-center justify-between'>
         <h1 className='text-2xl p-2 font-medium font-poppins cursor-pointer'>EdgeSnap</h1>
-        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-[8px]'>Connect</button>
+        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-[12px]'>Connect</button>
       </div>
     </>
   );
