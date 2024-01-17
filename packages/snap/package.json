@@ -27,8 +27,7 @@
     "postpublish": "rm -rf ipfs",
     "serve": "mm-snap serve",
     "test": "yarn run test:unit",
-    "test:unit": "mocha --colors",
-    "postinstall": "patch-package"
+    "test:unit": "mocha --colors"
   },
   "repository": {
     "type": "git",
