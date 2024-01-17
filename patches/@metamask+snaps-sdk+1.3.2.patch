@@ -1,0 +1,10 @@
+diff --git a/node_modules/@metamask/snaps-sdk/dist/types/types/handlers/rpc-request.d.ts b/node_modules/@metamask/snaps-sdk/dist/types/types/handlers/rpc-request.d.ts
+index e12a8ad..a8893da 100644
+--- a/node_modules/@metamask/snaps-sdk/dist/types/types/handlers/rpc-request.d.ts
++++ b/node_modules/@metamask/snaps-sdk/dist/types/types/handlers/rpc-request.d.ts
+@@ -18,4 +18,4 @@ import type { Json, JsonRpcParams, JsonRpcRequest } from '@metamask/utils';
+ export declare type OnRpcRequestHandler<Params extends JsonRpcParams = JsonRpcParams> = (args: {
+     origin: string;
+     request: JsonRpcRequest<Params>;
+-}) => Promise<Json>;
++}) => Promise<unknown>;

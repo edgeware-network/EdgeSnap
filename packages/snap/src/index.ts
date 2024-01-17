@@ -33,10 +33,7 @@ const apiDependentMethods = [
   'send'
 ];
 
-export const onRpcRequest: OnRpcRequestHandler = async ({
-  origin,
-  request,
-}) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   const state = await snap.request({
     method: 'snap_manageState',
     params: { operation: 'get' }
