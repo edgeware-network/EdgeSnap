@@ -4,6 +4,21 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build",
+      "config": {
+        "distDir": "public"
+      }
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1",
+      "continue": true
+    }
+  ],
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
 }
