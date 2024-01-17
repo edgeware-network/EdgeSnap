@@ -11,8 +11,8 @@ import {
   Select,
   Typography
 } from '@material-ui/core';
-import type { BlockInfo, SnapNetworks, Transaction } from '../../../../types';
-import type { MetamaskSnapApi } from '../../../../adapter/src/types';
+import type { BlockInfo, SnapNetworks, Transaction } from '@edgesnap/metamask-substrate-types';
+import type { MetamaskSnapApi } from '@edgesnap/metamask-substrate-adapter/src/types';
 import { Transfer } from '../../components/Transfer/Transfer';
 import { SignMessage } from '../../components/SignMessage/SignMessage';
 import { TransactionTable } from '../../components/TransactionTable/TransactionTable';

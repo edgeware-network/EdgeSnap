@@ -1,4 +1,4 @@
-import type { Transaction } from '../../../../types';
+import type { Transaction } from '@edgesnap/metamask-substrate-types';
 import type { MetamaskState } from '../../interfaces';
 
 export async function getTransactions(): Promise<Transaction[]> {

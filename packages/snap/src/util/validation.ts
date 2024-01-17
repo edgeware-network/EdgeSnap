@@ -1,4 +1,4 @@
-import type { BlockId, TxPayload } from '../../../types';
+import type { BlockId, TxPayload } from '@edgesnap/metamask-substrate-types';
 import type { SignerPayloadJSON, SignerPayloadRaw } from '@polkadot/types/types';
 import type { Describe } from 'superstruct';
 import { array, enums, number, object, optional, string, type, union } from 'superstruct';

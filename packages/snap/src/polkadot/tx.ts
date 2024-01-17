@@ -1,4 +1,4 @@
-import type { Transaction } from '../../../types';
+import type { Transaction } from '@edgesnap/metamask-substrate-types';
 import { getMetamaskState } from '../rpc/getMetamaskState';
 
 export async function saveTxToState(tx: Transaction): Promise<void> {

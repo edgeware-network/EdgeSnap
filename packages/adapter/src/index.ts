@@ -1,5 +1,5 @@
 import '@polkadot/types-augment';
-import type { SnapConfig } from '../../types';
+import type { SnapConfig } from '@edgesnap/metamask-substrate-types';
 import { MetamaskPolkadotSnap } from './snap';
 import { hasMetaMask, isMetamaskSnapsSupported, isPolkadotSnapInstalled } from './utils';
 

@@ -1,4 +1,4 @@
-import type { SnapConfig } from '../../../types';
+import type { SnapConfig } from '@edgesnap/metamask-substrate-types';
 
 export const kusamaConfiguration: SnapConfig = {
   addressPrefix: 2,
