@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chainsafe/metamask-polkadot-adapter": "latest",
-    "@chainsafe/metamask-polkadot-types": "latest",
+    "@chainsafe/metamask-polkadot-adapter": "workspace:^",
+    "@chainsafe/metamask-polkadot-types": "workspace:^",
     "@metamask/detect-provider": "^2.0.0",
     "@polkadot/api": "^10.9.1",
     "@polkadot/extension-dapp": "^0.46.5",
@@ -19,6 +19,7 @@
     "@types/node": "^20.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-router-dom": "^6.21.2"
   },
   "devDependencies": {
