@@ -16,7 +16,7 @@ const SnapCard = (props: SnapProps): React.JSX.Element => {
       </div>
       <div className='flex items-center gap-4 justify-between p-2'>
         <img src={props.img} className="w-10 rounded-full h-10" alt={props.name} />
-        <div className='flex flex-col items-center justify-center text-primary-650'>
+        <div className='flex flex-col items-center justify-center text-[#c9c9c9]'>
           <h3 className='text-md font-unbounded'>{props.name}</h3>
           <p className='text-xs font-poppins font-light text-[#c9c9c9]'>{props.description}</p>
         </div>
