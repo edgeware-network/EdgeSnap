@@ -5,7 +5,7 @@ import { navLinks } from './constants';
 
 const App = () => {
   return (
-    <div className='bg-[#000] z-0 sm:w-[100vw] w-full min-h-screen flex flex-col relative items-center justify-between gap-10'>
+    <div className='bg-[#000] z-0 sm:w-[100vw] w-full min-h-screen flex flex-col relative items-center gap-10'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -18,7 +18,7 @@ const App = () => {
           <Link 
             to={item.link}
             key={item.name}
-            className={`px-4 py-2 w-full ${item.name === "snap-store" ? "bg-primary-800 hover:bg-primary-900" : "bg-[#404040] hover:bg-[#282828] text-black"} flex items-center justify-center font-unbounded cursor-pointer font-normal rounded-[8px]`}
+            className={`px-4 py-2 w-full text-sm ${item.name === "snap-store" ? "bg-primary-800 hover:bg-primary-900" : "bg-[#404040] hover:bg-[#282828] text-black"} flex items-center justify-center font-unbounded cursor-pointer font-normal rounded-[8px]`}
             >
             {item.name}
           </Link>

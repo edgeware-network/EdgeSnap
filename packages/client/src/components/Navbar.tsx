@@ -16,7 +16,7 @@ const Navbar = (): React.JSX.Element => {
   return (
     <>
       {/* navbar for laptop */}
-      <div className='sm:flex w-[80vw] h-[56px] hidden relative bg-transparent text-[#c9c9c9] p-2.5 mx-2 top-4 outline outline-2 outline-primary-800 rounded-[12px] items-center justify-between'>
+      <div className='sm:flex w-[80vw] z-10 h-[56px] hidden relative bg-transparent text-[#c9c9c9] outline outline-2 outline-[#303030] p-2.5 mx-2 top-4 rounded-[12px] items-center justify-between'>
         {navLinks.map((item) => (
           <Fragment key={item.name}>{item.name === "EdgeSnap" ? 
             <Link to="/">
@@ -25,7 +25,7 @@ const Navbar = (): React.JSX.Element => {
               </h1>
             </Link> : 
             <div className='flex items-center justify-center gap-4'>
-              <h3 className={`hover:text-primary-650 text-md font-normal font-unbounded cursor-pointer ${isActive === item.name ? "text-primary-650" : ""}`}
+              <h3 className={`hover:text-primary-600 text-lg font-normal font-unbounded cursor-pointer ${isActive === item.name ? "text-primary-600" : ""}`}
                 onClick={() => {
                 setIsActive(item.name)
                 navigate(item.link)
@@ -39,7 +39,7 @@ const Navbar = (): React.JSX.Element => {
       </div>
 
       {/* navbar for mobile */}
-      <div className='flex w-[80vw] sm:hidden h-[56px] relative bg-transparent text-[#c9c9c9] p-2.5 mx-2 top-4 outline outline-2 outline-primary-800 rounded-[8px] gap-4 items-center justify-between'>
+      <div className='flex w-[80vw] z-10 sm:hidden h-[56px] relative bg-transparent text-[#c9c9c9] p-2.5 mx-2 top-4 outline outline-2 outline-[#303030] rounded-[8px] gap-4 items-center justify-between'>
         <Link to="/">
           <h1 className='text-2xl p-2 font-medium font-unbounded cursor-pointer'>EdgeSnap</h1>
         </Link>

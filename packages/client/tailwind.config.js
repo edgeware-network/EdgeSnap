@@ -27,6 +27,15 @@ export default {
         "primary-800": "#55112a",
         "primary-850": "#1a000f",
         "primary-900": "#400d1f",
+        "secondary-100": "#eafcf9",
+        "secondary-200": "#c0f6ee",
+        "secondary-300": "#97f0e2",
+        "secondary-400": "#6dead6",
+        "secondary-500": "#2ee1c5",
+        "secondary-600": "#25b49e",
+        "secondary-700": "#1c8776",
+        "secondary-800": "#0e433b",
+        "secondary-900": "#051614",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -38,6 +47,7 @@ export default {
         "Edgeware": "url('assets/edgeware.svg')",
         "Astar": "url('assets/astar.svg')",
         "Kusama": "url('assets/kusama.svg')",
+        "grid": "url('assets/grid.webp')",
       }
     },
   },
