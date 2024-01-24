@@ -64,8 +64,7 @@ const InteractiveUI = (): React.JSX.Element => {
   return (
     <>
     <div>
-
-      <select onChange={handleNetworkChange}>
+      <select value={network} onChange={handleNetworkChange}>
         <option value="westend">Westend</option>
         <option value="polkadot">Polkadot</option>
         <option value="kusama">Kusama</option>
