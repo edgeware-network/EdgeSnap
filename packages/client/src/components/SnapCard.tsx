@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
+import { initiatePolkadotSnap, isPolkadotSnapInstalled } from '../../services/metamask';
+import { MetamaskActions, MetaMaskContext } from '../../context/metamask';
 
 export interface SnapProps {
   name: string;
@@ -7,6 +9,39 @@ export interface SnapProps {
 }
 
 const SnapCard = (props: SnapProps): React.JSX.Element => {
+  const [state, dispatch] = useContext(MetaMaskContext);
+  console.log("page:",state);
+
+  useEffect(() => {
+    void (async (): Promise<void> => {
+      if (await isPolkadotSnapInstalled()) {
+        dispatch({
+          payload: { isInstalled: true },
+          type: MetamaskActions.SET_INSTALLED_STATUS
+        });
+      }
+    })();
+  }, [dispatch]);
+
+  // install snap snippet
+  const installSnap = useCallback(async (): Promise<void> => {
+    const installResult = await initiatePolkadotSnap();
+    if (!installResult.isSnapInstalled) {
+      dispatch({
+        payload: {
+          isInstalled: false,
+          message: 'Please accept snap installation prompt'
+        },
+        type: MetamaskActions.SET_INSTALLED_STATUS
+      });
+    } else {
+      dispatch({
+        payload: { isInstalled: true, snap: installResult.snap },
+        type: MetamaskActions.SET_INSTALLED_STATUS
+      });
+    }
+  }, [dispatch]);
+
   return (
     <div className='flex flex-col gap-2'>
       <div className='flex overflow-hidden items-center justify-center rounded-[12px]'>
@@ -20,7 +55,7 @@ const SnapCard = (props: SnapProps): React.JSX.Element => {
           <h3 className='text-md font-unbounded'>{props.name}</h3>
           <p className='text-xs font-poppins font-light text-[#c9c9c9]'>{props.description}</p>
         </div>
-        <button className='py-1 px-2 bg-primary-650 font-poppins font-light text-sm hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-[8px]'>Install</button>
+        <button className='py-1 px-2 bg-primary-650 font-poppins font-light text-sm hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-[8px]' onClick={installSnap}>Install</button>
       </div>
     </div>
   );
