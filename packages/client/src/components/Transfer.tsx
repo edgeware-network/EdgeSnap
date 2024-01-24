@@ -57,7 +57,7 @@ const Transfer: React.FC<ITransferProps> = ({network, onNewTransferCallback}) =>
       <form onSubmit={onSubmit} className='flex flex-col font-unbounded w-full gap-2'>
         <label className='flex flex-col items-start justify-center gap-2 p-1'>
           <p className='text-sm'>Recipient</p>
-          <input value={recipient} onChange={handleRecipientChange} type="text" placeholder='0x12..' className='font-poppins w-full text-sm p-1.5 rounded-md bg-black focus:outline-none border border-[#353535] focus:border-primary-650' />
+          <input value={recipient} onChange={handleRecipientChange} type="text" placeholder='address' className='font-poppins w-full text-sm p-1.5 rounded-md bg-black focus:outline-none border border-[#353535] focus:border-primary-650' />
         </label>
         <label className='flex flex-col items-start justify-center gap-2 p-1'>
           <p className='text-sm'>Amount</p>
