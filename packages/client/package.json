@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chainsafe/metamask-polkadot-adapter": "workspace:^",
-    "@chainsafe/metamask-polkadot-types": "workspace:^",
+    "@chainsafe/metamask-polkadot-adapter": "latest",
+    "@chainsafe/metamask-polkadot-types": "latest",
     "@metamask/detect-provider": "^2.0.0",
     "@polkadot/api": "^10.9.1",
     "@polkadot/extension-dapp": "^0.46.5",
