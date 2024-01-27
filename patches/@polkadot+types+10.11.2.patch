@@ -1,0 +1,70 @@
+diff --git a/node_modules/@polkadot/types/types/extrinsic.d.ts b/node_modules/@polkadot/types/types/extrinsic.d.ts
+index c183b10..0ad479f 100644
+--- a/node_modules/@polkadot/types/types/extrinsic.d.ts
++++ b/node_modules/@polkadot/types/types/extrinsic.d.ts
+@@ -31,19 +31,19 @@ export interface SignerPayloadJSON {
+     /**
+      * @description The checkpoint hash of the block, in hex
+      */
+-    blockHash: HexString;
++    blockHash: string;
+     /**
+      * @description The checkpoint block number, in hex
+      */
+-    blockNumber: HexString;
++    blockNumber: string;
+     /**
+      * @description The era for this transaction, in hex
+      */
+-    era: HexString;
++    era: string;
+     /**
+      * @description The genesis hash of the chain, in hex
+      */
+-    genesisHash: HexString;
++    genesisHash: string;
+     /**
+      * @description The encoded method (with arguments) in hex
+      */
+@@ -51,19 +51,19 @@ export interface SignerPayloadJSON {
+     /**
+      * @description The nonce for this transaction, in hex
+      */
+-    nonce: HexString;
++    nonce: string;
+     /**
+      * @description The current spec version for the runtime
+      */
+-    specVersion: HexString;
++    specVersion: string;
+     /**
+      * @description The tip for this transaction, in hex
+      */
+-    tip: HexString;
++    tip: string;
+     /**
+      * @description The current transaction version for the runtime
+      */
+-    transactionVersion: HexString;
++    transactionVersion: string;
+     /**
+      * @description The applicable signed extensions for this runtime
+      */
+@@ -134,7 +134,7 @@ export interface SignatureOptions {
+     signedExtensions?: string[];
+     signer?: Signer;
+     tip?: AnyNumber;
+-    assetId?: AnyNumber | object;
++    assetId?: AnyNumber;
+ }
+ interface ExtrinsicSignatureBase {
+     readonly isSigned: boolean;
+@@ -153,7 +153,7 @@ export interface ExtrinsicPayloadValue {
+     specVersion: AnyNumber;
+     tip: AnyNumber;
+     transactionVersion: AnyNumber;
+-    assetId?: AnyNumber | object;
++    assetId?: AnyNumber;
+ }
+ export interface IExtrinsicSignature extends ExtrinsicSignatureBase, Codec {
+     addSignature(signer: Address | Uint8Array | string, signature: Uint8Array | HexString, payload: Uint8Array | HexString): IExtrinsicSignature;
