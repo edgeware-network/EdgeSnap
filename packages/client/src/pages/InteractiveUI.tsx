@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { Account, Transfer, TxTable } from '../components';
+import { Account, Transfer } from '../components';
 import { SnapNetworks, Transaction } from '@chainsafe/metamask-polkadot-types';
 import type { MetamaskSnapApi } from '@chainsafe/metamask-polkadot-adapter/src/types';
 import { MetaMaskContext } from '../../context/metamask';
@@ -61,6 +61,7 @@ const InteractiveUI = (): React.JSX.Element => {
     return () => clearInterval(interval);
   }, [api, balance, setBalance]);
 
+  console.log(transactions)
   return (
     <>
     <div>
@@ -75,7 +76,6 @@ const InteractiveUI = (): React.JSX.Element => {
         <Account address={address} pubkey={pubkey} balance={balance} network={network} />
         <Transfer network={network} onNewTransferCallback={handleNewTransaction} />
       </div>
-      <TxTable transactions={transactions} /> 
     </>
   );
 };
