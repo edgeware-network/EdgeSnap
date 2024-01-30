@@ -5,7 +5,7 @@ import { navLinks } from './constants';
 
 const App = () => {
   return (
-    <div className='bg-[#000] z-0 sm:w-[100vw] w-full min-h-screen flex flex-col relative items-center gap-10'>
+    <div className='bg-[#000] z-0 min-w-full relative min-h-screen flex flex-col items-center gap-10'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
