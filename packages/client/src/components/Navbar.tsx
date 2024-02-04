@@ -1,17 +1,85 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { navLinks } from '../constants';
+import { shortAddress } from '../../services/format';
+import { MetaMaskContext, MetamaskActions } from '../../context/metamask';
+import { initiatePolkadotSnap } from '../../services/metamask';
 
 const Navbar = (): React.JSX.Element => {
   const pathname = window.location.pathname;
   const activeNavLink: string = pathname.split("/")[1] === "" ? "EdgeSnap" : pathname.split("/")[1];
   const [isActive, setIsActive] = useState<string>(activeNavLink);
+  const [address, setAddress] = useState<string>('');
+  const[state, dispatch] = useContext(MetaMaskContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     const activeNavLink: string = pathname.split("/")[1] === "" ? "EdgeSnap" : pathname.split("/")[1];    
     setIsActive(activeNavLink);
+    isWalletConnected();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[pathname]);
+
+  const updateWallet = (address: string) => {
+    setAddress(address)
+  }
+
+  const connectWallet = async() => {
+    if (window.ethereum){
+      try {
+        const accounts: string[] = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        })
+        updateWallet(accounts[0]);
+        const installResult = await initiatePolkadotSnap();
+        if (!installResult.isSnapInstalled) {
+          dispatch({
+            payload: {
+              isInstalled: false,
+              message: 'Please accept snap installation prompt'
+            },
+            type: MetamaskActions.SET_INSTALLED_STATUS
+          });
+        } else {
+          dispatch({
+            payload: { isInstalled: true, snap: installResult.snap },
+            type: MetamaskActions.SET_INSTALLED_STATUS
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+  const isWalletConnected = async() => {
+    try {
+      if (window.ethereum) {
+        const accounts: string[] = await window.ethereum.request({ method: "eth_accounts"});
+        if (accounts.length > 0) {
+          setAddress(accounts[0]);
+          const installResult = await initiatePolkadotSnap();
+          if (!installResult.isSnapInstalled) {
+            dispatch({
+              payload: {
+                isInstalled: false,
+                message: 'Please accept snap installation prompt'
+              },
+              type: MetamaskActions.SET_INSTALLED_STATUS
+            });
+          } else {
+            dispatch({
+              payload: { isInstalled: true, snap: installResult.snap },
+              type: MetamaskActions.SET_INSTALLED_STATUS
+            });
+          }
+        }
+      } else {
+        alert("Install Metamask!");
+      }
+    } catch (err) {
+      console.log("error: ", err);
+    }
+  };
 
   return (
     <>
@@ -20,7 +88,7 @@ const Navbar = (): React.JSX.Element => {
         {navLinks.map((item) => (
           <Fragment key={item.name}>{item.name === "EdgeSnap" ? 
             <Link to="/">
-              <h1 className='text-3xl p-1.5 font-medium font-unbounded cursor-pointer'>
+              <h1 className='text-3xl p-1.5 text-[#c9c9c9] font-medium font-unbounded cursor-pointer'>
                 {item.name}
               </h1>
             </Link> : 
@@ -35,7 +103,9 @@ const Navbar = (): React.JSX.Element => {
             </div>}
           </Fragment>
         ))}
-        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#121212] rounded-[8px]'>Connect</button>
+        <button onClick={connectWallet} className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#121212] rounded-[8px]'>
+          {address ? shortAddress(address) : "Connect"}
+        </button>    
       </div>
 
       {/* navbar for mobile */}
@@ -43,7 +113,9 @@ const Navbar = (): React.JSX.Element => {
         <Link to="/">
           <h1 className='text-2xl p-2 font-medium font-unbounded cursor-pointer'>EdgeSnap</h1>
         </Link>
-        <button className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#121212] rounded-[8px]'>Connect</button>
+        {!state.polkadotSnap.isInstalled && <button onClick={connectWallet} className='py-2 px-4 bg-primary-800 font-poppins font-medium hover:bg-primary-900 active:scale-95 border border-[#121212] rounded-[8px]'>
+          {address ? shortAddress(address) : "Connect"}
+        </button>}
       </div>
     </>
   );

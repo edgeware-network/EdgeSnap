@@ -1,6 +1,6 @@
 import React, { Dispatch, Reducer, createContext, useReducer } from "react";
 import type { MetamaskPolkadotSnap } from "@chainsafe/metamask-polkadot-adapter/build/snap";
-import {hasMetaMask } from '../services/metamask'
+import { hasMetaMask } from '../services/metamask'
 
 interface IPolkadotSnap {
   isInstalled: boolean;
@@ -28,6 +28,7 @@ export const MetaMaskContext = createContext<[MetamaskState, Dispatch<MetamaskDi
   initialState,
   () => null
 ]);
+
 // eslint-disable-next-line react-refresh/only-export-components
 export enum MetamaskActions {
   SET_INSTALLED_STATUS
@@ -51,11 +52,12 @@ export const MetaMaskContextProvider = (
   props: React.PropsWithChildren<Record<string, unknown>>
 ): React.JSX.Element => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <MetaMaskContext.Provider
       value={[
         state,
-        dispatch
+        dispatch,
       ]}>
         {props.children}
     </MetaMaskContext.Provider>
