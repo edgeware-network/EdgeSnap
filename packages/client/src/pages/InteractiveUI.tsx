@@ -64,15 +64,14 @@ const InteractiveUI = (): React.JSX.Element => {
   console.log(transactions)
   return (
     <>
-    <div>
-      <select value={network} onChange={handleNetworkChange}>
-        <option value="westend">Westend</option>
-        <option value="polkadot">Polkadot</option>
-        <option value="kusama">Kusama</option>
-      </select>
-      {/* select option */}
-    </div>
-      <div className='flex z-0 sm:flex-row flex-col gap-10 w-[70vw]'>
+      <div>
+        <select value={network} onChange={handleNetworkChange}>
+          <option value="westend">Westend</option>
+          <option value="polkadot">Polkadot</option>
+          <option value="kusama">Kusama</option>
+        </select>
+      </div>
+      <div className='flex z-0 flex-col gap-10 w-[70vw]'>
         <Account address={address} pubkey={pubkey} balance={balance} network={network} />
         <Transfer network={network} onNewTransferCallback={handleNewTransaction} />
       </div>

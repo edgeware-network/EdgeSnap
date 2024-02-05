@@ -25,10 +25,6 @@ export const snaps = [
 
 export const navLinks = [
   {
-    name: "EdgeSnap",
-    link: "/"
-  },
-  {
     name: "snap-store",
     link: "/snap-store"
   },
