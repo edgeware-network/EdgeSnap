@@ -35,13 +35,15 @@ const Navbar = (): React.JSX.Element => {
         </Link>
         <div className='flex items-center justify-center'>
           {navLinks.map((item) => (
-            <h3 key={item.name} className={`text-sm font-bold font-unbounded px-4 py-1 cursor-pointer ${isActive === item.name ? "text-primary-600" : ""}`}
-                onClick={() => {
-                setIsActive(item.name)
-                navigate(item.link)
-            }}>
-              {item.name}
-            </h3>
+            <Link to={item.link} key={item.name}>
+              <h3 key={item.name} className={`text-sm font-bold font-unbounded px-4 py-1 cursor-pointer ${isActive === item.name ? "text-primary-600" : ""}`}
+                  onClick={() => {
+                  setIsActive(item.name)
+                  navigate(item.link)
+              }}>
+                {item.name}
+              </h3>
+            </Link>
           ))}
         </div>
 				<div className='flex items-center justify-center gap-1'>

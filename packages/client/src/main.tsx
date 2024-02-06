@@ -9,10 +9,10 @@ const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 root.render(
   <React.StrictMode>
-    <MetaMaskContextProvider>
-      <Router>
+    <Router>
+      <MetaMaskContextProvider>
         <App />
-      </Router>
-    </MetaMaskContextProvider>
+      </MetaMaskContextProvider>
+    </Router>
   </React.StrictMode>,
 );
