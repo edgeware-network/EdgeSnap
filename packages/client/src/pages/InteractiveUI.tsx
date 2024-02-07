@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { Account, Transfer } from '../components';
+import { Account, Transfer, TxTable } from '../components';
 import { SnapNetworks, Transaction } from '@chainsafe/metamask-polkadot-types';
 import type { MetamaskSnapApi } from '@chainsafe/metamask-polkadot-adapter/src/types';
 import { MetaMaskContext } from '../../context/metamask';
@@ -28,8 +28,6 @@ const InteractiveUI = (): React.JSX.Element => {
     setNetwork(networkName);
     
   };
-  console.log(address, network, pubkey, balance);
-
   useEffect(() => {
     void (() => {
       if (state.polkadotSnap.isInstalled && state.polkadotSnap.snap) {
@@ -61,7 +59,6 @@ const InteractiveUI = (): React.JSX.Element => {
     return () => clearInterval(interval);
   }, [api, balance, setBalance]);
 
-  console.log(transactions)
   return (
     <>
       <div className='flex gap-1 items-center justify-center font-unbounded text-sm'>
@@ -75,6 +72,7 @@ const InteractiveUI = (): React.JSX.Element => {
       <div className='flex z-0 flex-col gap-10 w-[70vw]'>
         <Account address={address} pubkey={pubkey} balance={balance} network={network} />
         <Transfer network={network} onNewTransferCallback={handleNewTransaction} />
+        <TxTable txs={transactions} network={network} />
       </div>
     </>
   );
