@@ -64,8 +64,9 @@ const InteractiveUI = (): React.JSX.Element => {
   console.log(transactions)
   return (
     <>
-      <div>
-        <select value={network} onChange={handleNetworkChange}>
+      <div className='flex gap-1 items-center justify-center font-unbounded text-sm'>
+        <label className='text-[#c9c9c9]'>Select Network:</label>
+        <select className='bg-[#131313] text-[#c9c9c9] outline-none rounded-md border-2 border-[#353535] p-1.5' value={network} onChange={handleNetworkChange}>
           <option value="westend">Westend</option>
           <option value="polkadot">Polkadot</option>
           <option value="kusama">Kusama</option>
