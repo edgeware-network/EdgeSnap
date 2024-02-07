@@ -8,6 +8,8 @@ export function getCurrency(network: string): string {
       return 'KSM';
     case 'westend':
       return 'WND';
+    case 'polkadot':
+      return 'DOT';
   }
   return '';
 }
