@@ -3,6 +3,7 @@ import { initiatePolkadotSnap, isPolkadotSnapInstalled } from '../../services/me
 import { MetamaskActions, MetaMaskContext } from '../../context/metamask';
 import "react-toastify/ReactToastify.css"
 import { toast } from 'react-toastify';
+import { Tooltip } from 'react-tooltip';
 
 export interface SnapProps {
   name: string;
@@ -61,8 +62,9 @@ const SnapCard = (props: SnapProps): React.JSX.Element => {
         {
           state.connectWallet.isConnected 
           ? <button className='py-1 px-2 bg-primary-650 font-poppins font-light text-sm hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-md' onClick={installSnap}>Install</button>
-          : <button className='py-1 px-2 bg-[#353535] font-poppins font-light text-sm active:scale-95 border border-[#010101] rounded-md' disabled>Install</button>
+          : <button data-tooltip-id='install' data-tooltip-content="Connect MetaMask!" className='py-1 px-2 bg-[#353535] font-poppins font-light text-sm active:scale-95 border border-[#010101] rounded-md' disabled>Install</button>
         }
+        <Tooltip id='install' />
       </div>
     </div>
   );
