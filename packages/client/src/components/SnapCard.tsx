@@ -1,6 +1,8 @@
 import React, { useCallback, useContext, useEffect } from 'react';
 import { initiatePolkadotSnap, isPolkadotSnapInstalled } from '../../services/metamask';
 import { MetamaskActions, MetaMaskContext } from '../../context/metamask';
+import "react-toastify/ReactToastify.css"
+import { toast } from 'react-toastify';
 
 export interface SnapProps {
   name: string;
@@ -33,11 +35,13 @@ const SnapCard = (props: SnapProps): React.JSX.Element => {
         },
         type: MetamaskActions.SET_INSTALLED_STATUS
       });
+      toast.error("Snap not installed")
     } else {
       dispatch({
         payload: { isInstalled: true, snap: installResult.snap },
         type: MetamaskActions.SET_INSTALLED_STATUS
       });
+      toast.success("Snap installed successfully!")
     }
   }, [dispatch]);
 
@@ -56,8 +60,8 @@ const SnapCard = (props: SnapProps): React.JSX.Element => {
         </div>
         {
           state.connectWallet.isConnected 
-          ? <button className='py-1 px-2 bg-primary-650 font-poppins font-light text-sm hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-[8px]' onClick={installSnap}>Install</button>
-          : <button className='py-1 px-2 bg-[#353535] font-poppins font-light text-sm active:scale-95 border border-[#010101] rounded-[8px]' disabled>Install</button>
+          ? <button className='py-1 px-2 bg-primary-650 font-poppins font-light text-sm hover:bg-primary-900 active:scale-95 border border-[#010101] rounded-md' onClick={installSnap}>Install</button>
+          : <button className='py-1 px-2 bg-[#353535] font-poppins font-light text-sm active:scale-95 border border-[#010101] rounded-md' disabled>Install</button>
         }
       </div>
     </div>

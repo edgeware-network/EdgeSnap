@@ -2,6 +2,8 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { Home, InteractiveUI, SnapStore } from './pages';
 import { navLinks } from './constants';
+import "react-toastify/ReactToastify.css";
+import { Bounce, ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
@@ -23,7 +25,19 @@ const App = () => {
             {item.name}
           </Link>
         ))}
-      </div>
+      </div>  
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce} />  
     </div>
   );
 };

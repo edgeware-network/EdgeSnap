@@ -4,6 +4,8 @@ import { navLinks } from '../constants';
 import { MetaMaskContext, MetamaskActions } from '../../context/metamask';
 import { ConnectWallet } from '.';
 import { AiOutlineDisconnect } from 'react-icons/ai';
+import "react-toastify/ReactToastify.css";
+import { toast } from 'react-toastify';
 
 const Navbar = (): React.JSX.Element => {
   const pathname = window.location.pathname;
@@ -21,8 +23,8 @@ const Navbar = (): React.JSX.Element => {
     localStorage.setItem('isManuallyDisconnected', 'true'); // Set flag on manual disconnect
     dispatch({ type: MetamaskActions.SET_DISCONNECTED_STATUS, payload: { isManuallyDisconnected: true } });
     dispatch({ type: MetamaskActions.SET_INSTALLED_STATUS, payload: { isInstalled: false } });
-    // The rest of the disconnect logic...
-};
+    toast.success('Disconnected your wallet!');
+  };
 
   return (
     <>
@@ -50,8 +52,8 @@ const Navbar = (): React.JSX.Element => {
 					<ConnectWallet />   
 					{state.connectWallet.isConnected &&
 						<AiOutlineDisconnect 
-							onClick={disConnect} 
-							className="h-8 w-8 text-red-600 rounded-md p-1 border border-[#353535] hover:bg-[#131313] active:scale-95" />}
+							onClick={disConnect}
+							className="h-8 w-8 text-primary-600 rounded-full p-1 border border-[#353535] hover:bg-[#131313] active:scale-95" />}
 				</div>
       </div>
 
