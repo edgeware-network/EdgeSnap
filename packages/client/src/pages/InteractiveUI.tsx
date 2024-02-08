@@ -70,9 +70,9 @@ const InteractiveUI = (): React.JSX.Element => {
         </select>
       </div>
       <div className='flex z-0 flex-col gap-10 w-[70vw]'>
-        <Account address={address} pubkey={pubkey} balance={balance} network={network} />
+        <Account state={state} address={address} pubkey={pubkey} balance={balance} network={network} />
         <Transfer network={network} onNewTransferCallback={handleNewTransaction} />
-        <TxTable txs={transactions} network={network} />
+        <TxTable state={state} txs={transactions} network={network} />
       </div>
     </>
   );

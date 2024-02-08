@@ -1,10 +1,12 @@
 import { formatBalance } from '@polkadot/util';
 import type { Transaction } from '@chainsafe/metamask-polkadot-types';
 import { getCurrency, shortAddress } from '../../services/format';
+import { MetamaskState } from '../../context/metamask';
 
 export interface TxTableProps {
   txs: Transaction[];
 	network: string;
+	state: MetamaskState;
 }
 // testing data
 // const txs = [
@@ -57,7 +59,7 @@ const TxTable = (props: TxTableProps): React.JSX.Element => {
 					</tr>
 				</thead>
 				<tbody>
-					{props.txs.map((tx, index) => (
+					{props.txs.length > 0 && props.state.connectWallet.isConnected && props.txs.map((tx, index) => (
 						<tr key={index} className={`${index % 2 === 0 ? 'bg-[#121212]' : 'bg-[#252525]'}`}>
 							<td className='p-4 border border-[#303030]'>{tx.hash}</td>
 							<td className='p-4 border border-[#303030]'>{tx.block}</td>

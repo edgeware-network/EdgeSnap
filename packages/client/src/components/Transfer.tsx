@@ -63,7 +63,10 @@ const Transfer: React.FC<ITransferProps> = ({network, onNewTransferCallback}) =>
           <p className='text-sm'>Amount</p>
           <input value={amount} onChange={handleAmountChange} type="number" placeholder={`${network !== '' ? units : ""}`} className='font-poppins w-full text-sm p-1.5 rounded-md bg-black focus:outline-none border border-[#353535] focus:border-primary-650' />
         </label>
-        <button type='submit' className='text-xs bg-primary-650 px-4 py-2 rounded-[8px] active:scale-95'>Transfer</button>
+        {state.connectWallet.isConnected 
+        ? <button type='submit' className='text-xs bg-primary-650 px-4 py-2 rounded-md active:scale-95'>Transfer</button>
+        : <button type='submit' disabled className='text-xs bg-[#353535] px-4 py-2 rounded-md active:scale-95'>Transfer</button>
+        }
       </form>
     </div>
   );
